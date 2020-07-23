@@ -1,3 +1,4 @@
 rootProject.name = 'coding-basics'
 include 'basics-algorithm'
+include 'basics-pattern'
 

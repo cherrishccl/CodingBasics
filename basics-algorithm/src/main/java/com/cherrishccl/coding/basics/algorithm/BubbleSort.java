@@ -12,8 +12,13 @@ public class BubbleSort implements Sort{
         if(null == arr || arr.length <= 1){
             return;
         }
+        /*for(int i = 0; i < arr.length - 1; i++){
+            for (int j = i + 1; j < arr.length; j++){
+                swap(arr, i, j);
+            }
+        }*/
         for(int i = 0; i < arr.length - 1; i++){
-            for(int j = i + 1; j < arr.length; j++){
+            for(int j = arr.length - 1; j > i; j--){
                 swap(arr, i, j);
             }
         }

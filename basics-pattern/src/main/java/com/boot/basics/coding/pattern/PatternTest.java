@@ -9,6 +9,8 @@ import com.boot.basics.coding.pattern.builder.Worker;
 import com.boot.basics.coding.pattern.factory.ManagerFactory;
 import com.boot.basics.coding.pattern.factory.ProgramerFactory;
 import com.boot.basics.coding.pattern.factory.WorkFactory;
+import com.boot.basics.coding.pattern.prototype.Prototype;
+import com.boot.basics.coding.pattern.prototype.PrototypeConcrete;
 import com.boot.basics.coding.pattern.sigleton.*;
 
 /**
@@ -18,7 +20,7 @@ import com.boot.basics.coding.pattern.sigleton.*;
  * @Description
  */
 public class PatternTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         SigletonExample1 sigletonExample1 = SigletonExample1.getInstance();
         SigletonExample2 sigletonExample2 = SigletonExample2.getInstance();
         SigletonExample3 sigletonExample3 = SigletonExample3.getInstance();
@@ -45,5 +47,10 @@ public class PatternTest {
         Acer acer = new Acer.Builder().setCpu("AMD").setGraphics("NV").setNetwork("WL")
                 .setKeyboard("CH").setMouse("LG").setRam("KI").setRom("SM").build();
         System.out.println(acer);
+
+        Prototype pro1 = new PrototypeConcrete("原型");
+        Prototype pro2 = (Prototype) pro1.clone();
+        System.out.println(pro1.getName());
+        System.out.println(pro2.getName());
     }
 }

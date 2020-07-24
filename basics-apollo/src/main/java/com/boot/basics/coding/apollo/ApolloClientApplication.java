@@ -1,4 +1,4 @@
-package com.cherrishccl.coding.basics.apollo;
+package com.boot.basics.coding.apollo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;

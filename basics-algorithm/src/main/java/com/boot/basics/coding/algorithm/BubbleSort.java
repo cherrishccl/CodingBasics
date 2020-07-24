@@ -1,4 +1,4 @@
-package com.cherrishccl.coding.basics.algorithm;
+package com.boot.basics.coding.algorithm;
 
 /**
  * @Author cherrishccl

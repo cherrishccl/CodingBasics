@@ -1,0 +1,466 @@
+2020-07-24 10:38:39.865 [main] INFO  c.c.c.b.a.ApolloClientApplication [55] - [] - Starting ApolloClientApplication on BYCQ with PID 16028 (E:\workspace_idea\my\001\coding-basics\basics-apollo\build\classes\java\main started by Administrator in E:\workspace_idea\my\001\coding-basics) 
+2020-07-24 10:38:39.868 [main] DEBUG c.c.c.b.a.ApolloClientApplication [56] - [] - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+2020-07-24 10:38:39.868 [main] INFO  c.c.c.b.a.ApolloClientApplication [655] - [] - The following profiles are active: dev 
+2020-07-24 10:38:40.307 [main] INFO  o.s.c.a.ConfigurationClassPostProcessor [403] - [] - Cannot enhance @Configuration bean definition 'com.ctrip.framework.apollo.spring.boot.ApolloAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'. 
+2020-07-24 10:38:40.404 [main] WARN  o.s.b.c.p.PropertySourcesDeducer [66] - [] - Multiple PropertySourcesPlaceholderConfigurer beans registered [propertySourcesPlaceholderConfigurer, org.springframework.context.support.PropertySourcesPlaceholderConfigurer], falling back to Environment 
+2020-07-24 10:38:40.518 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [559] - [] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatServletWebServerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryConfiguration$EmbeddedTomcat.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'errorPageCustomizer' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/error/ErrorMvcAutoConfiguration.class]: Unsatisfied dependency expressed through method 'errorPageCustomizer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dispatcherServletRegistration' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.web.servlet.DispatcherServletRegistrationBean]: Factory method 'dispatcherServletRegistration' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties': Could not bind properties to 'MultipartProperties' : prefix=spring.servlet.multipart, ignoreInvalidFields=false, ignoreUnknownFields=false; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'spring.servlet.multipart.max-file-size' to org.springframework.util.unit.DataSize 
+2020-07-24 10:38:40.525 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener [136] - [] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2020-07-24 10:38:40.531 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter [40] - [] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.servlet.multipart.max-file-size' to org.springframework.util.unit.DataSize:
+
+    Property: spring.servlet.multipart.max-file-size
+    Value: 90Mb
+    Origin: "spring.servlet.multipart.maxFileSize" from property source "ApolloBootstrapPropertySources"
+    Reason: failed to convert java.lang.String to org.springframework.util.unit.DataSize
+
+Action:
+
+Update your application's configuration
+ 
+2020-07-24 10:39:24.586 [main] INFO  c.c.c.b.a.ApolloClientApplication [55] - [] - Starting ApolloClientApplication on BYCQ with PID 9376 (E:\workspace_idea\my\001\coding-basics\basics-apollo\build\classes\java\main started by Administrator in E:\workspace_idea\my\001\coding-basics) 
+2020-07-24 10:39:24.589 [main] DEBUG c.c.c.b.a.ApolloClientApplication [56] - [] - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+2020-07-24 10:39:24.589 [main] INFO  c.c.c.b.a.ApolloClientApplication [655] - [] - The following profiles are active: dev 
+2020-07-24 10:39:25.024 [main] INFO  o.s.c.a.ConfigurationClassPostProcessor [403] - [] - Cannot enhance @Configuration bean definition 'com.ctrip.framework.apollo.spring.boot.ApolloAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'. 
+2020-07-24 10:39:25.121 [main] WARN  o.s.b.c.p.PropertySourcesDeducer [66] - [] - Multiple PropertySourcesPlaceholderConfigurer beans registered [propertySourcesPlaceholderConfigurer, org.springframework.context.support.PropertySourcesPlaceholderConfigurer], falling back to Environment 
+2020-07-24 10:39:25.233 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [559] - [] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatServletWebServerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryConfiguration$EmbeddedTomcat.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'errorPageCustomizer' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/error/ErrorMvcAutoConfiguration.class]: Unsatisfied dependency expressed through method 'errorPageCustomizer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dispatcherServletRegistration' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.web.servlet.DispatcherServletRegistrationBean]: Factory method 'dispatcherServletRegistration' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties': Could not bind properties to 'MultipartProperties' : prefix=spring.servlet.multipart, ignoreInvalidFields=false, ignoreUnknownFields=false; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'spring.servlet.multipart.max-file-size' to org.springframework.util.unit.DataSize 
+2020-07-24 10:39:25.240 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener [136] - [] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2020-07-24 10:39:25.245 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter [40] - [] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.servlet.multipart.max-file-size' to org.springframework.util.unit.DataSize:
+
+    Property: spring.servlet.multipart.max-file-size
+    Value: 90Mb
+    Origin: "spring.servlet.multipart.maxFileSize" from property source "ApolloBootstrapPropertySources"
+    Reason: failed to convert java.lang.String to org.springframework.util.unit.DataSize
+
+Action:
+
+Update your application's configuration
+ 
+2020-07-24 10:40:17.949 [main] INFO  c.c.c.b.a.ApolloClientApplication [55] - [] - Starting ApolloClientApplication on BYCQ with PID 5200 (E:\workspace_idea\my\001\coding-basics\basics-apollo\build\classes\java\main started by Administrator in E:\workspace_idea\my\001\coding-basics) 
+2020-07-24 10:40:17.952 [main] DEBUG c.c.c.b.a.ApolloClientApplication [56] - [] - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+2020-07-24 10:40:17.952 [main] INFO  c.c.c.b.a.ApolloClientApplication [655] - [] - The following profiles are active: dev 
+2020-07-24 10:40:18.366 [main] INFO  o.s.c.a.ConfigurationClassPostProcessor [403] - [] - Cannot enhance @Configuration bean definition 'com.ctrip.framework.apollo.spring.boot.ApolloAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'. 
+2020-07-24 10:40:18.444 [main] WARN  o.s.b.c.p.PropertySourcesDeducer [66] - [] - Multiple PropertySourcesPlaceholderConfigurer beans registered [propertySourcesPlaceholderConfigurer, org.springframework.context.support.PropertySourcesPlaceholderConfigurer], falling back to Environment 
+2020-07-24 10:40:18.542 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [559] - [] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatServletWebServerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryConfiguration$EmbeddedTomcat.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'errorPageCustomizer' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/error/ErrorMvcAutoConfiguration.class]: Unsatisfied dependency expressed through method 'errorPageCustomizer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dispatcherServletRegistration' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.web.servlet.DispatcherServletRegistrationBean]: Factory method 'dispatcherServletRegistration' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties': Could not bind properties to 'MultipartProperties' : prefix=spring.servlet.multipart, ignoreInvalidFields=false, ignoreUnknownFields=false; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'spring.servlet.multipart.max-request-size' to org.springframework.util.unit.DataSize 
+2020-07-24 10:40:18.548 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener [136] - [] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2020-07-24 10:40:18.552 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter [40] - [] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.servlet.multipart.max-request-size' to org.springframework.util.unit.DataSize:
+
+    Property: spring.servlet.multipart.max-request-size
+    Value: 90Mb
+    Origin: "spring.servlet.multipart.maxRequestSize" from property source "ApolloBootstrapPropertySources"
+    Reason: failed to convert java.lang.String to org.springframework.util.unit.DataSize
+
+Action:
+
+Update your application's configuration
+ 
+2020-07-24 10:40:45.991 [main] INFO  c.c.c.b.a.ApolloClientApplication [55] - [] - Starting ApolloClientApplication on BYCQ with PID 15568 (E:\workspace_idea\my\001\coding-basics\basics-apollo\build\classes\java\main started by Administrator in E:\workspace_idea\my\001\coding-basics) 
+2020-07-24 10:40:45.994 [main] DEBUG c.c.c.b.a.ApolloClientApplication [56] - [] - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+2020-07-24 10:40:45.994 [main] INFO  c.c.c.b.a.ApolloClientApplication [655] - [] - The following profiles are active: dev 
+2020-07-24 10:40:46.426 [main] INFO  o.s.c.a.ConfigurationClassPostProcessor [403] - [] - Cannot enhance @Configuration bean definition 'com.ctrip.framework.apollo.spring.boot.ApolloAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'. 
+2020-07-24 10:40:46.524 [main] WARN  o.s.b.c.p.PropertySourcesDeducer [66] - [] - Multiple PropertySourcesPlaceholderConfigurer beans registered [propertySourcesPlaceholderConfigurer, org.springframework.context.support.PropertySourcesPlaceholderConfigurer], falling back to Environment 
+2020-07-24 10:40:46.639 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [559] - [] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tomcatServletWebServerFactory' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/ServletWebServerFactoryConfiguration$EmbeddedTomcat.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'errorPageCustomizer' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/error/ErrorMvcAutoConfiguration.class]: Unsatisfied dependency expressed through method 'errorPageCustomizer' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dispatcherServletRegistration' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.web.servlet.DispatcherServletRegistrationBean]: Factory method 'dispatcherServletRegistration' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties': Could not bind properties to 'MultipartProperties' : prefix=spring.servlet.multipart, ignoreInvalidFields=false, ignoreUnknownFields=false; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'spring.servlet.multipart.max-request-size' to org.springframework.util.unit.DataSize 
+2020-07-24 10:40:46.647 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener [136] - [] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2020-07-24 10:40:46.651 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter [40] - [] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.servlet.multipart.max-request-size' to org.springframework.util.unit.DataSize:
+
+    Property: spring.servlet.multipart.max-request-size
+    Value: 90Mb
+    Origin: "spring.servlet.multipart.maxRequestSize" from property source "ApolloBootstrapPropertySources"
+    Reason: failed to convert java.lang.String to org.springframework.util.unit.DataSize
+
+Action:
+
+Update your application's configuration
+ 
+2020-07-24 10:41:10.841 [main] INFO  c.c.c.b.a.ApolloClientApplication [55] - [] - Starting ApolloClientApplication on BYCQ with PID 15624 (E:\workspace_idea\my\001\coding-basics\basics-apollo\build\classes\java\main started by Administrator in E:\workspace_idea\my\001\coding-basics) 
+2020-07-24 10:41:10.843 [main] DEBUG c.c.c.b.a.ApolloClientApplication [56] - [] - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+2020-07-24 10:41:10.843 [main] INFO  c.c.c.b.a.ApolloClientApplication [655] - [] - The following profiles are active: dev 
+2020-07-24 10:41:11.201 [main] INFO  o.s.c.a.ConfigurationClassPostProcessor [403] - [] - Cannot enhance @Configuration bean definition 'com.ctrip.framework.apollo.spring.boot.ApolloAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'. 
+2020-07-24 10:41:11.278 [main] WARN  o.s.b.c.p.PropertySourcesDeducer [66] - [] - Multiple PropertySourcesPlaceholderConfigurer beans registered [propertySourcesPlaceholderConfigurer, org.springframework.context.support.PropertySourcesPlaceholderConfigurer], falling back to Environment 
+2020-07-24 10:41:11.449 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [108] - [] - Tomcat initialized with port(s): 8080 (http) 
+2020-07-24 10:41:11.457 [main] INFO  o.a.coyote.http11.Http11NioProtocol [173] - [] - Initializing ProtocolHandler ["http-nio-8080"] 
+2020-07-24 10:41:11.457 [main] INFO  o.a.catalina.core.StandardService [173] - [] - Starting service [Tomcat] 
+2020-07-24 10:41:11.458 [main] INFO  o.a.catalina.core.StandardEngine [173] - [] - Starting Servlet engine: [Apache Tomcat/9.0.36] 
+2020-07-24 10:41:11.459 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - An older version [1.2.14] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23] 
+2020-07-24 10:41:11.459 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - Loaded Apache Tomcat Native library [1.2.14] using APR version [1.6.2]. 
+2020-07-24 10:41:11.459 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true]. 
+2020-07-24 10:41:11.459 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true] 
+2020-07-24 10:41:12.493 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017] 
+2020-07-24 10:41:12.555 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] [173] - [] - Initializing Spring embedded WebApplicationContext 
+2020-07-24 10:41:12.556 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [285] - [] - Root WebApplicationContext: initialization completed in 1687 ms 
+2020-07-24 10:41:12.666 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor [181] - [] - Initializing ExecutorService 'applicationTaskExecutor' 
+2020-07-24 10:41:12.777 [main] INFO  o.a.coyote.http11.Http11NioProtocol [173] - [] - Starting ProtocolHandler ["http-nio-8080"] 
+2020-07-24 10:41:12.794 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [220] - [] - Tomcat started on port(s): 8080 (http) with context path '' 
+2020-07-24 10:41:12.802 [main] INFO  c.c.c.b.a.ApolloClientApplication [61] - [] - Started ApolloClientApplication in 3.013 seconds (JVM running for 3.757) 
+2020-07-24 10:41:12.813 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener [136] - [] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2020-07-24 10:41:12.820 [main] ERROR o.s.boot.SpringApplication [837] - [] - Application run failed 
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:779)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.cherrishccl.coding.basics.apollo.ApolloClientApplication.main(ApolloClientApplication.java:24)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'db_name' in value "jdbc:mysql://10.253.130.55:3306/${db_name}?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&allowMultiQueries=true"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveNestedPlaceholders(AbstractPropertyResolver.java:230)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:88)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:62)
+	at org.springframework.core.env.AbstractEnvironment.getProperty(AbstractEnvironment.java:535)
+	at java.util.stream.Collectors.lambda$toMap$58(Collectors.java:1321)
+	at java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
+	at java.util.stream.DistinctOps$1$2.accept(DistinctOps.java:175)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+	at java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:270)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.concurrent.CopyOnWriteArrayList$COWIterator.forEachRemaining(CopyOnWriteArrayList.java:1206)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.cherrishccl.coding.basics.apollo.ApolloClientApplication.run(ApolloClientApplication.java:36)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:795)
+	... 5 common frames omitted
+2020-07-24 10:41:13.059 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor [218] - [] - Shutting down ExecutorService 'applicationTaskExecutor' 
+2020-07-24 10:42:37.762 [main] INFO  c.c.c.b.a.ApolloClientApplication [55] - [] - Starting ApolloClientApplication on BYCQ with PID 1912 (E:\workspace_idea\my\001\coding-basics\basics-apollo\build\classes\java\main started by Administrator in E:\workspace_idea\my\001\coding-basics) 
+2020-07-24 10:42:37.765 [main] DEBUG c.c.c.b.a.ApolloClientApplication [56] - [] - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+2020-07-24 10:42:37.765 [main] INFO  c.c.c.b.a.ApolloClientApplication [655] - [] - The following profiles are active: dev 
+2020-07-24 10:42:38.199 [main] INFO  o.s.c.a.ConfigurationClassPostProcessor [403] - [] - Cannot enhance @Configuration bean definition 'com.ctrip.framework.apollo.spring.boot.ApolloAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'. 
+2020-07-24 10:42:38.299 [main] WARN  o.s.b.c.p.PropertySourcesDeducer [66] - [] - Multiple PropertySourcesPlaceholderConfigurer beans registered [propertySourcesPlaceholderConfigurer, org.springframework.context.support.PropertySourcesPlaceholderConfigurer], falling back to Environment 
+2020-07-24 10:42:38.494 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [108] - [] - Tomcat initialized with port(s): 8080 (http) 
+2020-07-24 10:42:38.502 [main] INFO  o.a.coyote.http11.Http11NioProtocol [173] - [] - Initializing ProtocolHandler ["http-nio-8080"] 
+2020-07-24 10:42:38.503 [main] INFO  o.a.catalina.core.StandardService [173] - [] - Starting service [Tomcat] 
+2020-07-24 10:42:38.503 [main] INFO  o.a.catalina.core.StandardEngine [173] - [] - Starting Servlet engine: [Apache Tomcat/9.0.36] 
+2020-07-24 10:42:38.504 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - An older version [1.2.14] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23] 
+2020-07-24 10:42:38.505 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - Loaded Apache Tomcat Native library [1.2.14] using APR version [1.6.2]. 
+2020-07-24 10:42:38.505 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true]. 
+2020-07-24 10:42:38.505 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true] 
+2020-07-24 10:42:39.540 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017] 
+2020-07-24 10:42:39.617 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] [173] - [] - Initializing Spring embedded WebApplicationContext 
+2020-07-24 10:42:39.617 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [285] - [] - Root WebApplicationContext: initialization completed in 1822 ms 
+2020-07-24 10:42:39.755 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor [181] - [] - Initializing ExecutorService 'applicationTaskExecutor' 
+2020-07-24 10:42:39.888 [main] INFO  o.a.coyote.http11.Http11NioProtocol [173] - [] - Starting ProtocolHandler ["http-nio-8080"] 
+2020-07-24 10:42:39.906 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [220] - [] - Tomcat started on port(s): 8080 (http) with context path '' 
+2020-07-24 10:42:39.915 [main] INFO  c.c.c.b.a.ApolloClientApplication [61] - [] - Started ApolloClientApplication in 3.499 seconds (JVM running for 4.419) 
+2020-07-24 10:42:39.920 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener [136] - [] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2020-07-24 10:42:39.928 [main] ERROR o.s.boot.SpringApplication [837] - [] - Application run failed 
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:779)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.cherrishccl.coding.basics.apollo.ApolloClientApplication.main(ApolloClientApplication.java:24)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'db_name' in value "jdbc:mysql://10.253.130.55:3306/${db_name}?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&allowMultiQueries=true"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveNestedPlaceholders(AbstractPropertyResolver.java:230)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:88)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:62)
+	at org.springframework.core.env.AbstractEnvironment.getProperty(AbstractEnvironment.java:535)
+	at java.util.stream.Collectors.lambda$toMap$58(Collectors.java:1321)
+	at java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
+	at java.util.stream.DistinctOps$1$2.accept(DistinctOps.java:175)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+	at java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:270)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.concurrent.CopyOnWriteArrayList$COWIterator.forEachRemaining(CopyOnWriteArrayList.java:1206)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.cherrishccl.coding.basics.apollo.ApolloClientApplication.run(ApolloClientApplication.java:36)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:795)
+	... 5 common frames omitted
+2020-07-24 10:42:40.221 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor [218] - [] - Shutting down ExecutorService 'applicationTaskExecutor' 
+2020-07-24 10:44:48.516 [main] INFO  c.c.c.b.a.ApolloClientApplication [55] - [] - Starting ApolloClientApplication on BYCQ with PID 15952 (E:\workspace_idea\my\001\coding-basics\basics-apollo\build\classes\java\main started by Administrator in E:\workspace_idea\my\001\coding-basics) 
+2020-07-24 10:44:48.518 [main] DEBUG c.c.c.b.a.ApolloClientApplication [56] - [] - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+2020-07-24 10:44:48.519 [main] INFO  c.c.c.b.a.ApolloClientApplication [655] - [] - The following profiles are active: dev 
+2020-07-24 10:44:48.912 [main] INFO  o.s.c.a.ConfigurationClassPostProcessor [403] - [] - Cannot enhance @Configuration bean definition 'com.ctrip.framework.apollo.spring.boot.ApolloAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'. 
+2020-07-24 10:44:48.990 [main] WARN  o.s.b.c.p.PropertySourcesDeducer [66] - [] - Multiple PropertySourcesPlaceholderConfigurer beans registered [propertySourcesPlaceholderConfigurer, org.springframework.context.support.PropertySourcesPlaceholderConfigurer], falling back to Environment 
+2020-07-24 10:44:49.155 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [108] - [] - Tomcat initialized with port(s): 8080 (http) 
+2020-07-24 10:44:49.162 [main] INFO  o.a.coyote.http11.Http11NioProtocol [173] - [] - Initializing ProtocolHandler ["http-nio-8080"] 
+2020-07-24 10:44:49.163 [main] INFO  o.a.catalina.core.StandardService [173] - [] - Starting service [Tomcat] 
+2020-07-24 10:44:49.163 [main] INFO  o.a.catalina.core.StandardEngine [173] - [] - Starting Servlet engine: [Apache Tomcat/9.0.36] 
+2020-07-24 10:44:49.164 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - An older version [1.2.14] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23] 
+2020-07-24 10:44:49.164 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - Loaded Apache Tomcat Native library [1.2.14] using APR version [1.6.2]. 
+2020-07-24 10:44:49.164 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true]. 
+2020-07-24 10:44:49.164 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true] 
+2020-07-24 10:44:50.196 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017] 
+2020-07-24 10:44:50.432 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] [173] - [] - Initializing Spring embedded WebApplicationContext 
+2020-07-24 10:44:50.433 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [285] - [] - Root WebApplicationContext: initialization completed in 1887 ms 
+2020-07-24 10:44:50.640 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor [181] - [] - Initializing ExecutorService 'applicationTaskExecutor' 
+2020-07-24 10:44:50.784 [main] INFO  o.a.coyote.http11.Http11NioProtocol [173] - [] - Starting ProtocolHandler ["http-nio-8080"] 
+2020-07-24 10:44:50.801 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [220] - [] - Tomcat started on port(s): 8080 (http) with context path '' 
+2020-07-24 10:44:50.809 [main] INFO  c.c.c.b.a.ApolloClientApplication [61] - [] - Started ApolloClientApplication in 3.534 seconds (JVM running for 4.319) 
+2020-07-24 10:44:50.813 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener [136] - [] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2020-07-24 10:44:50.821 [main] ERROR o.s.boot.SpringApplication [837] - [] - Application run failed 
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:779)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.cherrishccl.coding.basics.apollo.ApolloClientApplication.main(ApolloClientApplication.java:24)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'db_name' in value "jdbc:mysql://10.253.130.55:3306/${db_name}?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&allowMultiQueries=true"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveNestedPlaceholders(AbstractPropertyResolver.java:230)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:88)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:62)
+	at org.springframework.core.env.AbstractEnvironment.getProperty(AbstractEnvironment.java:535)
+	at java.util.stream.Collectors.lambda$toMap$58(Collectors.java:1321)
+	at java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
+	at java.util.stream.DistinctOps$1$2.accept(DistinctOps.java:175)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+	at java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:270)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.concurrent.CopyOnWriteArrayList$COWIterator.forEachRemaining(CopyOnWriteArrayList.java:1206)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.cherrishccl.coding.basics.apollo.ApolloClientApplication.run(ApolloClientApplication.java:36)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:795)
+	... 5 common frames omitted
+2020-07-24 10:44:51.042 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor [218] - [] - Shutting down ExecutorService 'applicationTaskExecutor' 
+2020-07-24 10:46:42.616 [main] INFO  c.c.c.b.a.ApolloClientApplication [55] - [] - Starting ApolloClientApplication on BYCQ with PID 11060 (E:\workspace_idea\my\001\coding-basics\basics-apollo\build\classes\java\main started by Administrator in E:\workspace_idea\my\001\coding-basics) 
+2020-07-24 10:46:42.619 [main] DEBUG c.c.c.b.a.ApolloClientApplication [56] - [] - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+2020-07-24 10:46:42.619 [main] INFO  c.c.c.b.a.ApolloClientApplication [655] - [] - The following profiles are active: dev 
+2020-07-24 10:46:43.057 [main] INFO  o.s.c.a.ConfigurationClassPostProcessor [403] - [] - Cannot enhance @Configuration bean definition 'com.ctrip.framework.apollo.spring.boot.ApolloAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'. 
+2020-07-24 10:46:43.154 [main] WARN  o.s.b.c.p.PropertySourcesDeducer [66] - [] - Multiple PropertySourcesPlaceholderConfigurer beans registered [propertySourcesPlaceholderConfigurer, org.springframework.context.support.PropertySourcesPlaceholderConfigurer], falling back to Environment 
+2020-07-24 10:46:43.344 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [108] - [] - Tomcat initialized with port(s): 8080 (http) 
+2020-07-24 10:46:43.352 [main] INFO  o.a.coyote.http11.Http11NioProtocol [173] - [] - Initializing ProtocolHandler ["http-nio-8080"] 
+2020-07-24 10:46:43.353 [main] INFO  o.a.catalina.core.StandardService [173] - [] - Starting service [Tomcat] 
+2020-07-24 10:46:43.353 [main] INFO  o.a.catalina.core.StandardEngine [173] - [] - Starting Servlet engine: [Apache Tomcat/9.0.36] 
+2020-07-24 10:46:43.355 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - An older version [1.2.14] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23] 
+2020-07-24 10:46:43.355 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - Loaded Apache Tomcat Native library [1.2.14] using APR version [1.6.2]. 
+2020-07-24 10:46:43.355 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true]. 
+2020-07-24 10:46:43.355 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true] 
+2020-07-24 10:46:44.385 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017] 
+2020-07-24 10:46:44.466 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] [173] - [] - Initializing Spring embedded WebApplicationContext 
+2020-07-24 10:46:44.466 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [285] - [] - Root WebApplicationContext: initialization completed in 1817 ms 
+2020-07-24 10:46:44.609 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor [181] - [] - Initializing ExecutorService 'applicationTaskExecutor' 
+2020-07-24 10:46:44.754 [main] INFO  o.a.coyote.http11.Http11NioProtocol [173] - [] - Starting ProtocolHandler ["http-nio-8080"] 
+2020-07-24 10:46:44.772 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [220] - [] - Tomcat started on port(s): 8080 (http) with context path '' 
+2020-07-24 10:46:44.780 [main] INFO  c.c.c.b.a.ApolloClientApplication [61] - [] - Started ApolloClientApplication in 3.986 seconds (JVM running for 4.885) 
+2020-07-24 10:46:44.784 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener [136] - [] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2020-07-24 10:46:44.793 [main] ERROR o.s.boot.SpringApplication [837] - [] - Application run failed 
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:779)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.cherrishccl.coding.basics.apollo.ApolloClientApplication.main(ApolloClientApplication.java:24)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'db_name' in value "jdbc:mysql://10.253.130.55:3306/${db_name}?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&allowMultiQueries=true"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveNestedPlaceholders(AbstractPropertyResolver.java:230)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:88)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:62)
+	at org.springframework.core.env.AbstractEnvironment.getProperty(AbstractEnvironment.java:535)
+	at java.util.stream.Collectors.lambda$toMap$58(Collectors.java:1321)
+	at java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
+	at java.util.stream.DistinctOps$1$2.accept(DistinctOps.java:175)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+	at java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:270)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.concurrent.CopyOnWriteArrayList$COWIterator.forEachRemaining(CopyOnWriteArrayList.java:1206)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.cherrishccl.coding.basics.apollo.ApolloClientApplication.run(ApolloClientApplication.java:36)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:795)
+	... 5 common frames omitted
+2020-07-24 10:46:45.083 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor [218] - [] - Shutting down ExecutorService 'applicationTaskExecutor' 
+2020-07-24 10:47:28.355 [main] INFO  c.c.c.b.a.ApolloClientApplication [55] - [] - Starting ApolloClientApplication on BYCQ with PID 192 (E:\workspace_idea\my\001\coding-basics\basics-apollo\build\classes\java\main started by Administrator in E:\workspace_idea\my\001\coding-basics) 
+2020-07-24 10:47:28.357 [main] DEBUG c.c.c.b.a.ApolloClientApplication [56] - [] - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+2020-07-24 10:47:28.358 [main] INFO  c.c.c.b.a.ApolloClientApplication [655] - [] - The following profiles are active: dev 
+2020-07-24 10:47:28.788 [main] INFO  o.s.c.a.ConfigurationClassPostProcessor [403] - [] - Cannot enhance @Configuration bean definition 'com.ctrip.framework.apollo.spring.boot.ApolloAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'. 
+2020-07-24 10:47:28.883 [main] WARN  o.s.b.c.p.PropertySourcesDeducer [66] - [] - Multiple PropertySourcesPlaceholderConfigurer beans registered [propertySourcesPlaceholderConfigurer, org.springframework.context.support.PropertySourcesPlaceholderConfigurer], falling back to Environment 
+2020-07-24 10:47:29.085 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [108] - [] - Tomcat initialized with port(s): 8080 (http) 
+2020-07-24 10:47:29.093 [main] INFO  o.a.coyote.http11.Http11NioProtocol [173] - [] - Initializing ProtocolHandler ["http-nio-8080"] 
+2020-07-24 10:47:29.094 [main] INFO  o.a.catalina.core.StandardService [173] - [] - Starting service [Tomcat] 
+2020-07-24 10:47:29.094 [main] INFO  o.a.catalina.core.StandardEngine [173] - [] - Starting Servlet engine: [Apache Tomcat/9.0.36] 
+2020-07-24 10:47:29.095 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - An older version [1.2.14] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23] 
+2020-07-24 10:47:29.096 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - Loaded Apache Tomcat Native library [1.2.14] using APR version [1.6.2]. 
+2020-07-24 10:47:29.096 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true]. 
+2020-07-24 10:47:29.096 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true] 
+2020-07-24 10:47:30.119 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017] 
+2020-07-24 10:47:30.195 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] [173] - [] - Initializing Spring embedded WebApplicationContext 
+2020-07-24 10:47:30.196 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [285] - [] - Root WebApplicationContext: initialization completed in 1808 ms 
+2020-07-24 10:47:30.334 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor [181] - [] - Initializing ExecutorService 'applicationTaskExecutor' 
+2020-07-24 10:47:30.459 [main] INFO  o.a.coyote.http11.Http11NioProtocol [173] - [] - Starting ProtocolHandler ["http-nio-8080"] 
+2020-07-24 10:47:30.477 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [220] - [] - Tomcat started on port(s): 8080 (http) with context path '' 
+2020-07-24 10:47:30.485 [main] INFO  c.c.c.b.a.ApolloClientApplication [61] - [] - Started ApolloClientApplication in 3.935 seconds (JVM running for 4.816) 
+2020-07-24 10:47:30.490 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener [136] - [] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2020-07-24 10:47:30.498 [main] ERROR o.s.boot.SpringApplication [837] - [] - Application run failed 
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:779)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.cherrishccl.coding.basics.apollo.ApolloClientApplication.main(ApolloClientApplication.java:24)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'db_name' in value "jdbc:mysql://10.253.130.55:3306/${db_name}?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&allowMultiQueries=true"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveNestedPlaceholders(AbstractPropertyResolver.java:230)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:88)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:62)
+	at org.springframework.core.env.AbstractEnvironment.getProperty(AbstractEnvironment.java:535)
+	at java.util.stream.Collectors.lambda$toMap$58(Collectors.java:1321)
+	at java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
+	at java.util.stream.DistinctOps$1$2.accept(DistinctOps.java:175)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+	at java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:270)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.concurrent.CopyOnWriteArrayList$COWIterator.forEachRemaining(CopyOnWriteArrayList.java:1206)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.cherrishccl.coding.basics.apollo.ApolloClientApplication.run(ApolloClientApplication.java:36)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:795)
+	... 5 common frames omitted
+2020-07-24 10:47:30.785 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor [218] - [] - Shutting down ExecutorService 'applicationTaskExecutor' 
+2020-07-24 10:50:19.612 [main] INFO  c.c.c.b.a.ApolloClientApplication [55] - [] - Starting ApolloClientApplication on BYCQ with PID 16600 (E:\workspace_idea\my\001\coding-basics\basics-apollo\build\classes\java\main started by Administrator in E:\workspace_idea\my\001\coding-basics) 
+2020-07-24 10:50:19.617 [main] DEBUG c.c.c.b.a.ApolloClientApplication [56] - [] - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE 
+2020-07-24 10:50:19.618 [main] INFO  c.c.c.b.a.ApolloClientApplication [655] - [] - The following profiles are active: dev 
+2020-07-24 10:50:20.322 [main] INFO  o.s.c.a.ConfigurationClassPostProcessor [403] - [] - Cannot enhance @Configuration bean definition 'com.ctrip.framework.apollo.spring.boot.ApolloAutoConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'. 
+2020-07-24 10:50:20.400 [main] WARN  o.s.b.c.p.PropertySourcesDeducer [66] - [] - Multiple PropertySourcesPlaceholderConfigurer beans registered [propertySourcesPlaceholderConfigurer, org.springframework.context.support.PropertySourcesPlaceholderConfigurer], falling back to Environment 
+2020-07-24 10:50:20.566 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [108] - [] - Tomcat initialized with port(s): 8080 (http) 
+2020-07-24 10:50:20.573 [main] INFO  o.a.coyote.http11.Http11NioProtocol [173] - [] - Initializing ProtocolHandler ["http-nio-8080"] 
+2020-07-24 10:50:20.573 [main] INFO  o.a.catalina.core.StandardService [173] - [] - Starting service [Tomcat] 
+2020-07-24 10:50:20.573 [main] INFO  o.a.catalina.core.StandardEngine [173] - [] - Starting Servlet engine: [Apache Tomcat/9.0.36] 
+2020-07-24 10:50:20.574 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - An older version [1.2.14] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23] 
+2020-07-24 10:50:20.575 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - Loaded Apache Tomcat Native library [1.2.14] using APR version [1.6.2]. 
+2020-07-24 10:50:20.575 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true]. 
+2020-07-24 10:50:20.575 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true] 
+2020-07-24 10:50:21.605 [main] INFO  o.a.c.core.AprLifecycleListener [173] - [] - OpenSSL successfully initialized [OpenSSL 1.0.2l  25 May 2017] 
+2020-07-24 10:50:21.665 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] [173] - [] - Initializing Spring embedded WebApplicationContext 
+2020-07-24 10:50:21.665 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext [285] - [] - Root WebApplicationContext: initialization completed in 1989 ms 
+2020-07-24 10:50:21.774 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor [181] - [] - Initializing ExecutorService 'applicationTaskExecutor' 
+2020-07-24 10:50:21.886 [main] INFO  o.a.coyote.http11.Http11NioProtocol [173] - [] - Starting ProtocolHandler ["http-nio-8080"] 
+2020-07-24 10:50:21.901 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer [220] - [] - Tomcat started on port(s): 8080 (http) with context path '' 
+2020-07-24 10:50:21.910 [main] INFO  c.c.c.b.a.ApolloClientApplication [61] - [] - Started ApolloClientApplication in 4.356 seconds (JVM running for 6.045) 
+2020-07-24 10:50:21.913 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener [136] - [] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled. 
+2020-07-24 10:50:21.920 [main] ERROR o.s.boot.SpringApplication [837] - [] - Application run failed 
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:798)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:779)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.cherrishccl.coding.basics.apollo.ApolloClientApplication.main(ApolloClientApplication.java:24)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'db_name' in value "jdbc:mysql://10.253.130.55:3306/${db_name}?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&allowMultiQueries=true"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveNestedPlaceholders(AbstractPropertyResolver.java:230)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:88)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:62)
+	at org.springframework.core.env.AbstractEnvironment.getProperty(AbstractEnvironment.java:535)
+	at java.util.stream.Collectors.lambda$toMap$58(Collectors.java:1321)
+	at java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
+	at java.util.stream.DistinctOps$1$2.accept(DistinctOps.java:175)
+	at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+	at java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:270)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.concurrent.CopyOnWriteArrayList$COWIterator.forEachRemaining(CopyOnWriteArrayList.java:1206)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+	at com.cherrishccl.coding.basics.apollo.ApolloClientApplication.run(ApolloClientApplication.java:36)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:795)
+	... 5 common frames omitted
+2020-07-24 10:50:22.137 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor [218] - [] - Shutting down ExecutorService 'applicationTaskExecutor' 

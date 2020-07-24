@@ -29,5 +29,5 @@ r<sub>i</sub>，则称所用的排序方法是不稳定的。
 指算法本身的复杂性，过于复杂的算法也会影响排序的性能。
 
 常见算法复杂度如图：
-![image](./common_sort_algorithm_o.jpg)
+![image](common_sort_algorithm_o.jpg)
 

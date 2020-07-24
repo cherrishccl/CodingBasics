@@ -10,6 +10,11 @@ repositories {
 	mavenCentral()
 }
 
+//编译JAVA文件时采用UTF-8
+//tasks.withType(JavaCompile) {
+//	options.encoding = "UTF-8"
+//}
+//[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 dependencies {
 }
 

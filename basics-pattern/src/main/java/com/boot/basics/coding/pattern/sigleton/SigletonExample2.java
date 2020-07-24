@@ -1,4 +1,4 @@
-package com.boot.basics.coding.pattern;
+package com.boot.basics.coding.pattern.sigleton;
 
 /**
  * @Author cherrishccl

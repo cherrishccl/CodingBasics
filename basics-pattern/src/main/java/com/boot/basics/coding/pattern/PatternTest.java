@@ -2,6 +2,10 @@ package com.boot.basics.coding.pattern;
 
 import com.boot.basics.coding.pattern.abstractfactory.AbstractFactory;
 import com.boot.basics.coding.pattern.abstractfactory.InstanceFactory;
+import com.boot.basics.coding.pattern.builder.Acer;
+import com.boot.basics.coding.pattern.builder.Computer;
+import com.boot.basics.coding.pattern.builder.LenovoBuilder;
+import com.boot.basics.coding.pattern.builder.Worker;
 import com.boot.basics.coding.pattern.factory.ManagerFactory;
 import com.boot.basics.coding.pattern.factory.ProgramerFactory;
 import com.boot.basics.coding.pattern.factory.WorkFactory;
@@ -31,5 +35,15 @@ public class PatternTest {
         AbstractFactory factory = new InstanceFactory();
         factory.getShape("R").draw();
         factory.getColor("RED").fill();
+
+        Worker worker = new Worker();
+        worker.setComputerBuilder(new LenovoBuilder());
+        worker.build();
+        Computer computer = worker.getComputer();
+        System.out.println(computer.toString());
+
+        Acer acer = new Acer.Builder().setCpu("AMD").setGraphics("NV").setNetwork("WL")
+                .setKeyboard("CH").setMouse("LG").setRam("KI").setRom("SM").build();
+        System.out.println(acer);
     }
 }

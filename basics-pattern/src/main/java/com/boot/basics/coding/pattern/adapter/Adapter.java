@@ -19,6 +19,6 @@ public class Adapter implements Target {
 
     @Override
     public void adapterMethod() {
-        System.out.printf("Adapter method");
+        System.out.println("Adapter method");
     }
 }

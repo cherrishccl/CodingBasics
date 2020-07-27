@@ -9,6 +9,10 @@ import com.boot.basics.coding.pattern.builder.Acer;
 import com.boot.basics.coding.pattern.builder.Computer;
 import com.boot.basics.coding.pattern.builder.LenovoBuilder;
 import com.boot.basics.coding.pattern.builder.Worker;
+import com.boot.basics.coding.pattern.decorator.Man;
+import com.boot.basics.coding.pattern.decorator.ManDecoratorA;
+import com.boot.basics.coding.pattern.decorator.ManDecoratorB;
+import com.boot.basics.coding.pattern.decorator.Person;
 import com.boot.basics.coding.pattern.factory.ManagerFactory;
 import com.boot.basics.coding.pattern.factory.ProgramerFactory;
 import com.boot.basics.coding.pattern.factory.WorkFactory;
@@ -59,5 +63,14 @@ public class PatternTest {
         Target target = new Adapter(new Adaptee());
         target.adapteeMethod();
         target.adapterMethod();
+
+        Man man = new Man();
+        ManDecoratorA ma = new ManDecoratorA();
+        ma.setPerson(man);
+
+        ManDecoratorB mb = new ManDecoratorB();
+        mb.setPerson(man);
+        ma.eat();
+        mb.eat();
     }
 }

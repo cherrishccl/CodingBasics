@@ -2,6 +2,9 @@ package com.boot.basics.coding.pattern;
 
 import com.boot.basics.coding.pattern.abstractfactory.AbstractFactory;
 import com.boot.basics.coding.pattern.abstractfactory.InstanceFactory;
+import com.boot.basics.coding.pattern.adapter.Adaptee;
+import com.boot.basics.coding.pattern.adapter.Adapter;
+import com.boot.basics.coding.pattern.adapter.Target;
 import com.boot.basics.coding.pattern.builder.Acer;
 import com.boot.basics.coding.pattern.builder.Computer;
 import com.boot.basics.coding.pattern.builder.LenovoBuilder;
@@ -52,5 +55,9 @@ public class PatternTest {
         Prototype pro2 = (Prototype) pro1.clone();
         System.out.println(pro1.getName());
         System.out.println(pro2.getName());
+
+        Target target = new Adapter(new Adaptee());
+        target.adapteeMethod();
+        target.adapterMethod();
     }
 }

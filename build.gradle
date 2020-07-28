@@ -2,7 +2,7 @@ plugins {
 	id 'java'
 }
 
-group = 'com.cherrishccl'
+group = 'com.boot'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
@@ -11,9 +11,9 @@ repositories {
 }
 
 //编译JAVA文件时采用UTF-8
-//tasks.withType(JavaCompile) {
-//	options.encoding = "UTF-8"
-//}
+tasks.withType(JavaCompile) {
+	options.encoding = "UTF-8"
+}
 //[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 dependencies {
 }

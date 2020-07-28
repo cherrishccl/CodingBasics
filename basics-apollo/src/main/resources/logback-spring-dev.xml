@@ -28,7 +28,7 @@
 
 
     <!-- 打印SQL日志(请根据实际情况修改) -->
-    <logger name="com.cherrishccl" level="DEBUG"/>
+    <logger name="com.boot" level="DEBUG"/>
 
     <springProfile name="dev">
         <root level="info">

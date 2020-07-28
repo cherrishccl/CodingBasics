@@ -6,3 +6,6 @@ include 'basics-apollo:apollo-server'
 findProject(':basics-apollo:apollo-server')?.name = 'apollo-server'
 include 'basics-apollo:apollo-client'
 findProject(':basics-apollo:apollo-client')?.name = 'apollo-client'
+include 'basics-spring-cloud-stream'
+include 'basics-mq'
+

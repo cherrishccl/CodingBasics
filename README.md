@@ -2,7 +2,7 @@
 ```
 ./gradlew -v 版本号，首次运行，没有gradle的要下载的哦。
 
-./gradlew clean 删除HelloWord/app目录下的build文件夹
+./gradlew clean 删除project目录下的build文件夹
 
 ./gradlew build 检查依赖并编译打包
 

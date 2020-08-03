@@ -13,11 +13,14 @@ import com.boot.basics.coding.pattern.decorator.Man;
 import com.boot.basics.coding.pattern.decorator.ManDecoratorA;
 import com.boot.basics.coding.pattern.decorator.ManDecoratorB;
 import com.boot.basics.coding.pattern.decorator.Person;
+import com.boot.basics.coding.pattern.facade.*;
 import com.boot.basics.coding.pattern.factory.ManagerFactory;
 import com.boot.basics.coding.pattern.factory.ProgramerFactory;
 import com.boot.basics.coding.pattern.factory.WorkFactory;
 import com.boot.basics.coding.pattern.prototype.Prototype;
 import com.boot.basics.coding.pattern.prototype.PrototypeConcrete;
+import com.boot.basics.coding.pattern.proxy.Object;
+import com.boot.basics.coding.pattern.proxy.ProxyObject;
 import com.boot.basics.coding.pattern.sigleton.*;
 
 /**
@@ -72,5 +75,17 @@ public class PatternTest {
         mb.setPerson(man);
         ma.eat();
         mb.eat();
+
+        ServiceA sa = new ServiceAImpl();
+        ServiceB sb = new ServiceBImpl();
+        sa.methodA();
+        sb.methodB();
+        System.out.println("==========");
+        Facade facade = new Facade();
+        facade.methodA();
+        facade.methodB();
+
+        Object object = new ProxyObject();
+        object.action();
     }
 }

@@ -23,8 +23,7 @@ public interface Sort {
      */
     default void swap(int[] arr, int i, int j) {
         if (null != arr && arr.length > 0) {
-            if (arr[i] > arr[j]) {
-                /*int temp = arr[i];
+            /*int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;*/
 
@@ -32,10 +31,9 @@ public interface Sort {
                 arr[j] = arr[i] - arr[j];
                 arr[i] = arr[i] - arr[j];*/
 
-                arr[i] = arr[i] ^ arr[j];
-                arr[j] = arr[i] ^ arr[j];
-                arr[i] = arr[i] ^ arr[j];
-            }
+            arr[i] = arr[i] ^ arr[j];
+            arr[j] = arr[i] ^ arr[j];
+            arr[i] = arr[i] ^ arr[j];
         }
     }
 }

@@ -12,8 +12,8 @@ public class AlgorithmTest {
     public static void main(String[] args) {
         int[] arr = new int[]{12, 99, 90, 89, 67, 78, 56, 45, 34, 23, 11, 98, 66, 33, 55, 22, 77, 44, 33, 56, 67, 43, 88};
 //        Sort sort = new BubbleSort();
-//        Sort sort = new SelectionSort();
-        Sort sort = new InsertionSort();
+        Sort sort = new SelectionSort();
+//        Sort sort = new InsertionSort();
         long start = System.nanoTime();
         sort.sort(arr);
         long end = System.nanoTime();

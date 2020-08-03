@@ -19,7 +19,9 @@ public class BubbleSort implements Sort{
         }*/
         for(int i = 0; i < arr.length - 1; i++){
             for(int j = arr.length - 1; j > i; j--){
-                swap(arr, i, j);
+                if(arr[i] > arr[j]){
+                    swap(arr, i, j);
+                }
             }
         }
     }

@@ -20,7 +20,9 @@ public class SelectionSort implements Sort {
                 }
             }
             if(minIndex != i){
-                swap(arr, i, minIndex);
+                if(arr[i] > arr[minIndex]) {
+                    swap(arr, i, minIndex);
+                }
             }
         }
     }

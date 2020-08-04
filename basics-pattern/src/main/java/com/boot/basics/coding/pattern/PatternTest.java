@@ -5,6 +5,7 @@ import com.boot.basics.coding.pattern.abstractfactory.InstanceFactory;
 import com.boot.basics.coding.pattern.adapter.Adaptee;
 import com.boot.basics.coding.pattern.adapter.Adapter;
 import com.boot.basics.coding.pattern.adapter.Target;
+import com.boot.basics.coding.pattern.bridge.*;
 import com.boot.basics.coding.pattern.builder.Acer;
 import com.boot.basics.coding.pattern.builder.Computer;
 import com.boot.basics.coding.pattern.builder.LenovoBuilder;
@@ -87,5 +88,12 @@ public class PatternTest {
 
         Object object = new ProxyObject();
         object.action();
+
+        Phone huawei = new Huawei();
+        huawei.setMemory(new Memory6G());
+        huawei.buy();
+        Phone xiaomi = new Xiaomi();
+        xiaomi.setMemory(new Memory8G());
+        xiaomi.buy();
     }
 }

@@ -21,6 +21,8 @@ import com.boot.basics.coding.pattern.facade.*;
 import com.boot.basics.coding.pattern.factory.ManagerFactory;
 import com.boot.basics.coding.pattern.factory.ProgramerFactory;
 import com.boot.basics.coding.pattern.factory.WorkFactory;
+import com.boot.basics.coding.pattern.flyweight.Flyweight;
+import com.boot.basics.coding.pattern.flyweight.FlyweightFactory;
 import com.boot.basics.coding.pattern.prototype.Prototype;
 import com.boot.basics.coding.pattern.prototype.PrototypeConcrete;
 import com.boot.basics.coding.pattern.proxy.Object;
@@ -119,9 +121,19 @@ public class PatternTest {
         comp2.add(new Department1("办事处2部门1"));
         comp2.add(new Department2("办事处2部门2"));
         comp.add(comp2);
-
         root.display(1);
-
         root.duty();
+
+        Flyweight fly1 = FlyweightFactory.getFlyweight("a");
+        fly1.action(1);
+        Flyweight fly2 = FlyweightFactory.getFlyweight("a");
+        System.out.println(fly1 == fly2);
+        Flyweight fly3 = FlyweightFactory.getFlyweight("b");
+        fly3.action(2);
+        Flyweight fly4 = FlyweightFactory.getFlyweight("c");
+        fly4.action(3);
+        Flyweight fly5 = FlyweightFactory.getFlyweight("d");
+        fly4.action(4);
+        System.out.println(FlyweightFactory.getSize());
     }
 }

@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @Author cherrishccl
  * @Date 2020/8/6 10:58
  * @Version 1.0
- * @Description
+ * @Description 消费者单纯的使用，其实可以不用添加这个配置，直接建后面的监听就好，使用注解来让监听器监听对应的队列即可。配置上了的话，其实消费者也是生成者的身份，也能推送该消息
  */
 @Configuration
 public class RabbitDirectConfig {

@@ -10,6 +10,7 @@ import com.boot.basics.coding.pattern.builder.Acer;
 import com.boot.basics.coding.pattern.builder.Computer;
 import com.boot.basics.coding.pattern.builder.LenovoBuilder;
 import com.boot.basics.coding.pattern.builder.Worker;
+import com.boot.basics.coding.pattern.chainofresponsibility.*;
 import com.boot.basics.coding.pattern.composite.ConcreteCompany;
 import com.boot.basics.coding.pattern.composite.Department1;
 import com.boot.basics.coding.pattern.composite.Department2;
@@ -135,5 +136,20 @@ public class PatternTest {
         Flyweight fly5 = FlyweightFactory.getFlyweight("d");
         fly4.action(4);
         System.out.println(FlyweightFactory.getSize());
+        System.out.println("------------------------------------");
+
+        RequestHandle hr = new HRRequestHandle();
+        RequestHandle pm = new PMRequestHandle(hr);
+        RequestHandle tl = new TLRequestHandle(pm);
+        //team leader处理离职请求
+        Request request = new Request();
+        tl.handle(request); System.out.println("===========");
+        //team leader处理加薪请求
+        request = new SalaryRequest();
+        tl.handle(request);
+        System.out.println("========");
+        //项目经理上理辞职请求
+        request = new DimissionRequest();
+        pm.handle(request);
     }
 }

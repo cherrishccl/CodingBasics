@@ -14,6 +14,11 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class RabbitConfig {
+    public static final String EX_DIRECT = "direct";
+    public static final String EX_TOPIC = "topic";
+    public static final String EX_FANOUT = "fanout";
+    @Deprecated
+    public static final String EX_HEADERS = "headers";
     @Bean
     public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
         RabbitTemplate template = new RabbitTemplate(connectionFactory);

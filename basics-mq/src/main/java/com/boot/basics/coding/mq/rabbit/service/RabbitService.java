@@ -1,6 +1,8 @@
 package com.boot.basics.coding.mq.rabbit.service;
 
+import com.boot.basics.coding.mq.rabbit.RabbitConfig;
 import com.boot.basics.coding.mq.rabbit.RabbitDirectConfig;
+import com.boot.basics.coding.mq.rabbit.RabbitTopicConfig;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -21,6 +23,73 @@ import java.util.concurrent.atomic.LongAdder;
 public class RabbitService {
     @Autowired
     private RabbitTemplate rabbitTemplate;
+
+    public RabbitService() {
+    }
+
+    public String sendReq(String type){
+        if(RabbitConfig.EX_DIRECT.equals(type)){
+            direct();
+        }else if(RabbitConfig.EX_TOPIC.equals(type)){
+            topic();
+        }else if(RabbitConfig.EX_FANOUT.equals(type)){
+
+        }else if(RabbitConfig.EX_HEADERS.equals(type)){
+
+        }else {
+
+        }
+        return "success";
+    }
+
+    private void topic(){
+        rabbitTemplate.convertAndSend(RabbitTopicConfig.TOPIC_EXCHANGE, RabbitTopicConfig.TOPIC_QUEUE1, "queue111111");
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        rabbitTemplate.convertAndSend(RabbitTopicConfig.TOPIC_EXCHANGE, RabbitTopicConfig.TOPIC_QUEUE2, "queue222222");
+    }
+
+    private void direct(){
+        /*ExecutorService executorService = new ThreadPoolExecutor(2,5,1,
+                TimeUnit.MINUTES, new LinkedBlockingDeque<>(),new NamedThreadFactory("RabbitMQ-Send"));
+
+        for(int i = 0; i < 100; i++){
+            executorService.execute(() -> {
+                //将消息携带绑定键值：myDirectRouting 发送到交换机 myDirectExchange
+                rabbitTemplate.convertAndSend(RabbitDirectConfig.DIRECT_EXCHANGE,
+                        RabbitDirectConfig.DIRECT_ROUTING, Thread.currentThread().getName());
+            });
+        }
+        executorService.shutdown();
+         */
+        AtomicInteger num = new AtomicInteger();
+        for(int i = 0; i < 100; i++){
+            new Thread(() -> {
+                rabbitTemplate.convertAndSend(RabbitDirectConfig.DIRECT_EXCHANGE,
+                        RabbitDirectConfig.DIRECT_ROUTING, "消息" + num.getAndIncrement());
+            }).start();
+        }
+    }
+
+    @RabbitListener(queues = {RabbitDirectConfig.DIRECT_QUEUE})
+    @RabbitHandler
+    public void processor1(String message){
+        System.out.println("processor1 processing message: "+ message);
+    }
+    @RabbitListener(queues = {RabbitDirectConfig.DIRECT_QUEUE})
+    @RabbitHandler
+    public void processor2(String message){
+        System.out.println("processor2 processing message: "+ message);
+    }
+    @RabbitListener(queues = {RabbitDirectConfig.DIRECT_QUEUE})
+    @RabbitHandler
+    public void processor3(String message){
+        System.out.println("processor3 processing message: "+ message);
+    }
+
 
     static class NamedThreadFactory implements ThreadFactory{
 
@@ -59,46 +128,4 @@ public class RabbitService {
         }
     }
 
-    public RabbitService() {
-    }
-
-    public String sendReq(){
-
-        /*ExecutorService executorService = new ThreadPoolExecutor(2,5,1,
-                TimeUnit.MINUTES, new LinkedBlockingDeque<>(),new NamedThreadFactory("RabbitMQ-Send"));
-
-        for(int i = 0; i < 100; i++){
-            executorService.execute(() -> {
-                //将消息携带绑定键值：myDirectRouting 发送到交换机 myDirectExchange
-                rabbitTemplate.convertAndSend(RabbitDirectConfig.DIRECT_EXCHANGE,
-                        RabbitDirectConfig.DIRECT_ROUTING, Thread.currentThread().getName());
-            });
-        }
-        executorService.shutdown();
-         */
-        AtomicInteger num = new AtomicInteger();
-        for(int i = 0; i < 100; i++){
-            new Thread(() -> {
-                rabbitTemplate.convertAndSend(RabbitDirectConfig.DIRECT_EXCHANGE,
-                        RabbitDirectConfig.DIRECT_ROUTING, "消息" + num.getAndIncrement());
-            }).start();
-        }
-        return "success";
-    }
-
-    @RabbitListener(queues = {RabbitDirectConfig.DIRECT_QUEUE})
-    @RabbitHandler
-    public void processor1(String message){
-        System.out.println("processor1 processing message: "+ message);
-    }
-    @RabbitListener(queues = {RabbitDirectConfig.DIRECT_QUEUE})
-    @RabbitHandler
-    public void processor2(String message){
-        System.out.println("processor2 processing message: "+ message);
-    }
-    @RabbitListener(queues = {RabbitDirectConfig.DIRECT_QUEUE})
-    @RabbitHandler
-    public void processor3(String message){
-        System.out.println("processor3 processing message: "+ message);
-    }
 }

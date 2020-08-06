@@ -20,9 +20,9 @@ import java.util.Map;
 public class RabbitController {
     @Autowired
     private RabbitService rabbitService;
-    @GetMapping(value = "/req")
-    public Map<String, Object> req(){
-        rabbitService.sendReq();
+    @GetMapping(value = "/send")
+    public Map<String, Object> req(String type){
+        rabbitService.sendReq(type);
         Map<String, Object> result = new HashMap<>(3);
         result.put("code", "200");
         result.put("message", "success");

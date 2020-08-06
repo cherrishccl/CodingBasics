@@ -15,37 +15,40 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class RabbitTopicConfig {
-    public final static String EXG_TOPIC = "ADD_CUSTOMER";
+    public static final String TOPIC_QUEUE1 = "topic.queue1";
+    public static final String TOPIC_QUEUE2 = "topic.queue2";
+    public static final String TOPIC_EXCHANGE = "myTopicExchange";
+
     @Bean
     public Queue queue1(){
-        return new Queue("queue1");
+        return new Queue(TOPIC_QUEUE1);
     }
     @Bean
     public Queue queue2(){
-        return new Queue("queue2");
+        return new Queue(TOPIC_QUEUE2);
     }
     @Bean
-    public TopicExchange topicExchange(){
-        return new TopicExchange(EXG_TOPIC);
+    public TopicExchange myTopicExchange(){
+        return new TopicExchange(TOPIC_EXCHANGE);
     }
 
     /**
-     * 将 queue1 和topicExchange绑定,而且绑定的键值为topic.queue1
+     * 将 queue1 和myTopicExchange绑定,而且绑定的键值为topic.queue1
      * 这样只要是消息携带的路由键是topic.queue1,才会分发到该队列
      * @return
      */
     @Bean
     public Binding binding1(){
-        return BindingBuilder.bind(queue1()).to(topicExchange()).with("topic.queue1");
+        return BindingBuilder.bind(queue1()).to(myTopicExchange()).with(TOPIC_QUEUE1);
     }
 
     /**
-     * 将 queue2 和topicExchange绑定,而且绑定的键值为用上通配路由键规则topic.#
+     * 将 queue2 和myTopicExchange绑定,而且绑定的键值为用上通配路由键规则topic.#
      * 这样只要是消息携带的路由键是以topic.开头,都会分发到该队列
      * @return
      */
     @Bean
     public Binding binding2(){
-        return BindingBuilder.bind(queue2()).to(topicExchange()).with("topic.#");
+        return BindingBuilder.bind(queue2()).to(myTopicExchange()).with("topic.#");
     }
 }

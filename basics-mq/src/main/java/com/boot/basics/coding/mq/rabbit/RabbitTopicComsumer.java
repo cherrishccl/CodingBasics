@@ -17,10 +17,18 @@ import org.springframework.stereotype.Component;
 public class RabbitTopicComsumer {
 
     @RabbitHandler
-    @RabbitListener(queues = "queue1", containerFactory="rabbitListenerContainerFactory")
-    public void receive(String message){
+    @RabbitListener(queues = RabbitTopicConfig.TOPIC_QUEUE1, containerFactory="rabbitListenerContainerFactory")
+    public void receive1(String message){
         System.out.println("-------------------------");
-        System.out.println(message);
+        System.out.println("receiver1--->" + message);
+        System.out.println("-------------------------");
+    }
+
+    @RabbitHandler
+    @RabbitListener(queues = RabbitTopicConfig.TOPIC_QUEUE2, containerFactory="rabbitListenerContainerFactory")
+    public void receive2(String message){
+        System.out.println("-------------------------");
+        System.out.println("receiver2--->" + message);
         System.out.println("-------------------------");
     }
 }

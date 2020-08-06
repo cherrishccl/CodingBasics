@@ -18,7 +18,7 @@ public class RabbitTopicComsumer {
 
     @RabbitHandler
     @RabbitListener(queues = RabbitTopicConfig.TOPIC_QUEUE1, containerFactory="rabbitListenerContainerFactory")
-    public void receive1(String message){
+    public void receiveT1(String message){
         System.out.println("-------------------------");
         System.out.println("receiver1--->" + message);
         System.out.println("-------------------------");
@@ -26,7 +26,7 @@ public class RabbitTopicComsumer {
 
     @RabbitHandler
     @RabbitListener(queues = RabbitTopicConfig.TOPIC_QUEUE2, containerFactory="rabbitListenerContainerFactory")
-    public void receive2(String message){
+    public void receiveT2(String message){
         System.out.println("-------------------------");
         System.out.println("receiver2--->" + message);
         System.out.println("-------------------------");

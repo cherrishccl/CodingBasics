@@ -2,6 +2,7 @@ package com.boot.basics.coding.mq.rabbit.service;
 
 import com.boot.basics.coding.mq.rabbit.RabbitConfig;
 import com.boot.basics.coding.mq.rabbit.RabbitDirectConfig;
+import com.boot.basics.coding.mq.rabbit.RabbitFanoutConfig;
 import com.boot.basics.coding.mq.rabbit.RabbitTopicConfig;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -33,7 +34,7 @@ public class RabbitService {
         }else if(RabbitConfig.EX_TOPIC.equals(type)){
             topic();
         }else if(RabbitConfig.EX_FANOUT.equals(type)){
-
+            fanout();
         }else if(RabbitConfig.EX_HEADERS.equals(type)){
 
         }else {
@@ -42,14 +43,17 @@ public class RabbitService {
         return "success";
     }
 
+    private void fanout(){
+        rabbitTemplate.convertAndSend(RabbitFanoutConfig.FANOUT_EXCHANGE, null, "fanout message000000");
+    }
     private void topic(){
-        rabbitTemplate.convertAndSend(RabbitTopicConfig.TOPIC_EXCHANGE, RabbitTopicConfig.TOPIC_QUEUE1, "queue111111");
+        rabbitTemplate.convertAndSend(RabbitTopicConfig.TOPIC_EXCHANGE, RabbitTopicConfig.TOPIC_QUEUE1, "topic.queue111111");
         try {
             TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        rabbitTemplate.convertAndSend(RabbitTopicConfig.TOPIC_EXCHANGE, RabbitTopicConfig.TOPIC_QUEUE2, "queue222222");
+        rabbitTemplate.convertAndSend(RabbitTopicConfig.TOPIC_EXCHANGE, RabbitTopicConfig.TOPIC_QUEUE2, "topic.queue222222");
     }
 
     private void direct(){

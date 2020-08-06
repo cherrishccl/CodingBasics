@@ -1,4 +1,4 @@
-package com.boot.basics.coding.mq;
+package com.boot.basics.coding.mq.rabbit;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

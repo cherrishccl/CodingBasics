@@ -1,4 +1,4 @@
-package com.boot.basics.coding.mq;
+package com.boot.basics.coding.mq.rabbit;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;

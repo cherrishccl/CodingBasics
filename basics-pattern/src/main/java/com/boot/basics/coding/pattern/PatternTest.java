@@ -11,6 +11,10 @@ import com.boot.basics.coding.pattern.builder.Computer;
 import com.boot.basics.coding.pattern.builder.LenovoBuilder;
 import com.boot.basics.coding.pattern.builder.Worker;
 import com.boot.basics.coding.pattern.chainofresponsibility.*;
+import com.boot.basics.coding.pattern.command.Command;
+import com.boot.basics.coding.pattern.command.CommandImpl;
+import com.boot.basics.coding.pattern.command.Invoker;
+import com.boot.basics.coding.pattern.command.Receiver;
 import com.boot.basics.coding.pattern.composite.ConcreteCompany;
 import com.boot.basics.coding.pattern.composite.Department1;
 import com.boot.basics.coding.pattern.composite.Department2;
@@ -151,5 +155,11 @@ public class PatternTest {
         //项目经理上理辞职请求
         request = new DimissionRequest();
         pm.handle(request);
+        /*****************************/
+        Receiver rc = new Receiver();
+        Command command = new CommandImpl(rc);
+        Invoker ir = new Invoker();
+        ir.setCommand(command);
+        ir.execute();
     }
 }

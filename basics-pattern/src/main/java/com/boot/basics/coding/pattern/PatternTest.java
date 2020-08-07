@@ -28,6 +28,10 @@ import com.boot.basics.coding.pattern.factory.ProgramerFactory;
 import com.boot.basics.coding.pattern.factory.WorkFactory;
 import com.boot.basics.coding.pattern.flyweight.Flyweight;
 import com.boot.basics.coding.pattern.flyweight.FlyweightFactory;
+import com.boot.basics.coding.pattern.interpreter.AdvanceExpression;
+import com.boot.basics.coding.pattern.interpreter.Context;
+import com.boot.basics.coding.pattern.interpreter.Expression;
+import com.boot.basics.coding.pattern.interpreter.SimpleExpression;
 import com.boot.basics.coding.pattern.prototype.Prototype;
 import com.boot.basics.coding.pattern.prototype.PrototypeConcrete;
 import com.boot.basics.coding.pattern.proxy.Object;
@@ -161,5 +165,14 @@ public class PatternTest {
         Invoker ir = new Invoker();
         ir.setCommand(command);
         ir.execute();
+
+        /***********************/
+        Context ctx = new Context();
+        ctx.add(new SimpleExpression());
+        ctx.add(new AdvanceExpression());
+        ctx.add(new SimpleExpression());
+        for (Expression eps : ctx.getList()) {
+            eps.interpret(ctx);
+        }
     }
 }

@@ -10,4 +10,5 @@ include 'basics-spring-cloud-stream'
 include 'basics-mq'
 include 'basics-tools'
 include 'basics-ctest'
+include 'basics-netty'
 

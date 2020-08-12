@@ -40,6 +40,9 @@ public class JdbcUtils {
             this.url = prop.getProperty("url");
             this.username = prop.getProperty("username");
             this.password = prop.getProperty("password");
+            if(null == connection) {
+                getConnection();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -93,6 +96,7 @@ public class JdbcUtils {
         if(null == connection){
             getConnection();
         }
+        connection.setAutoCommit(false);
         pstmt = connection.prepareStatement(sql);
         int index = 1;
         if (params != null && !params.isEmpty()) {

@@ -1,7 +1,7 @@
 package com.boot.basics.coding.pattern.abstractfactory;
 
 /**
- * @Author chencl
+ * @Author cherrishccl
  * @Date 2020/7/24 14:08
  * @Version 1.0
  * @Description

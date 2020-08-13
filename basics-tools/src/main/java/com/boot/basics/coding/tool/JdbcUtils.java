@@ -67,10 +67,12 @@ public class JdbcUtils {
      * @return
      */
     public Connection getConnection() {
-        try {
-            connection = DriverManager.getConnection(url, username, password);
-        } catch (SQLException e) {
-            e.printStackTrace();
+        if(null == connection) {
+            try {
+                connection = DriverManager.getConnection(url, username, password);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return connection;
     }
@@ -90,24 +92,57 @@ public class JdbcUtils {
      * @return
      * @throws SQLException
      */
-    public boolean executeByPreparedStatement(String sql, List<Object> params) throws SQLException {
+    public boolean execute(String sql, List<Object> params, boolean autoCommit) throws SQLException {
         boolean flag = false;
         int result = -1;
         if(null == connection){
             getConnection();
         }
-        connection.setAutoCommit(false);
-        pstmt = connection.prepareStatement(sql);
+        connection.setAutoCommit(autoCommit);
+        /*pstmt = connection.prepareStatement(sql);
         int index = 1;
         if (params != null && !params.isEmpty()) {
             for (int i = 0; i < params.size(); i++) {
                 pstmt.setObject(index++, params.get(i));
             }
-        }
+        }*/
+        preStmt(sql, params);
         result = pstmt.executeUpdate();
         flag = result > 0 ? true : false;
         return flag;
     }
+
+    public int[] executeBatch(String sql, boolean autoCommit) throws SQLException {
+        if(null == connection){
+            getConnection();
+        }
+        connection.setAutoCommit(autoCommit);
+        pstmt = connection.prepareStatement(sql);
+        pstmt.addBatch(sql);
+        if(!autoCommit){
+            commit();
+        }
+        return pstmt.executeBatch();
+    }
+
+    /**
+     * insert into user(name, age) values(?, ?)
+     * insert into user(name, age) values(?, ?), (?, ?)
+     * update user set name = ? where name = ?
+     * delete from user where name = ?
+     * @param sql
+     * @param params
+     * @throws SQLException
+     */
+    public void preStmt(String sql, List<Object> params) throws SQLException {
+        pstmt = connection.prepareStatement(sql);
+        if(null != params && params.size() > 0){
+            for(int i = 0; i < params.size(); i++){
+                pstmt.setObject(i + 1, params.get(i));
+            }
+        }
+    }
+
 
     /**
      * 查询单条记录

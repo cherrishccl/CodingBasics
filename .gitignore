@@ -33,3 +33,5 @@ config/
 
 ### VS Code ###
 .vscode/
+
+**/*.hprof

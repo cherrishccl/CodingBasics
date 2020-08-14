@@ -1,15 +1,18 @@
 package com.boot.basics.coding.mq.rabbit.service;
 
-import com.boot.basics.coding.mq.rabbit.RabbitConfig;
-import com.boot.basics.coding.mq.rabbit.RabbitDirectConfig;
-import com.boot.basics.coding.mq.rabbit.RabbitFanoutConfig;
-import com.boot.basics.coding.mq.rabbit.RabbitTopicConfig;
+import com.boot.basics.coding.mq.rabbit.*;
+import com.rabbitmq.client.Channel;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.util.UUID;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.LongAdder;
@@ -129,6 +132,38 @@ public class RabbitService {
                 t.setPriority(Thread.NORM_PRIORITY);
             }
             return t;
+        }
+    }
+
+    public void sendMail(){
+        String msgId = UUID.randomUUID().toString();
+        // TODO mailId 记录消息, 入库
+        CorrelationData correlationData = new CorrelationData(msgId);
+        // 发送消息
+        rabbitTemplate.convertAndSend(MailQueueConfig.MAIL_EXCHANGE_NAME,
+
+                MailQueueConfig.MAIL_ROUTING_KEY_NAME, "发送邮件", correlationData);
+
+    }
+
+    @RabbitListener(queues = {MailQueueConfig.MAIL_QUEUE_NAME})
+    @RabbitHandler
+    public void receiveMail(Message message, Channel channel) throws IOException {
+        System.out.println("邮件消息处理: "+ message);
+        // 从邮件中获取 msgId
+        // 判断邮件是否已消费, 重复则return
+
+        MessageProperties properties = message.getMessageProperties();
+        long tag = properties.getDeliveryTag();
+        // 发送邮件是否成功
+        boolean success = false;
+        if (success) {
+            // msgId更新邮件消费状态
+            // 消费确认
+            channel.basicAck(tag, false);
+        } else {
+            // 失败则重新投递
+            channel.basicNack(tag, false, true);
         }
     }
 

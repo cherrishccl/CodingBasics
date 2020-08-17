@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boot.basics.coding.mq.rabbit.dao.TUserMapper">
+  <!--<resultMap id="BaseResultMap" type="com.boot.basics.coding.mq.rabbit.dao.TmpUser">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="age" jdbcType="SMALLINT" property="age" />
+    <result column="salary" jdbcType="DECIMAL" property="salary" />
+  </resultMap>-->
+  <resultMap id="BaseResultMap" type="com.boot.basics.coding.mq.rabbit.dao.TUser">
+    <constructor>
+      <idArg column="id" jdbcType="INTEGER"/>
+      <arg column="user_name" jdbcType="VARCHAR" />
+      <arg column="age" jdbcType="SMALLINT"/>
+      <arg column="salary" jdbcType="DECIMAL"/>
+      <arg column="max_size" jdbcType="INTEGER"/>
+    </constructor>
+  </resultMap>
+ <sql id="Base_Column_List">
+    id, user_name, age, salary, cert_no, address, remark, max_size
+  </sql>
+
+  <insert id="insert" parameterType="com.boot.basics.coding.mq.rabbit.dao.TUser">
+    insert into t_user (id, user_name, age,
+      salary, max_size)
+    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{age,jdbcType=SMALLINT}, 
+      #{salary,jdbcType=DECIMAL}, #{maxSize, jdbcType=INTEGER})
+  </insert>
+
+</mapper>

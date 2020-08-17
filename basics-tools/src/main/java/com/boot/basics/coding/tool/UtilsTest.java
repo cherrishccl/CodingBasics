@@ -1,5 +1,6 @@
 package com.boot.basics.coding.tool;
 
+import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,7 +53,7 @@ public class UtilsTest {
 
     private static void test2() throws SQLException {
         JdbcUtils jdbcUtils = new JdbcUtils();
-        String sqlPrefix = "INSERT INTO tmp_user(user_name, cert_no, cert_type, address, user_type, remark) VALUES";
+        String sqlPrefix = "INSERT INTO tmp_user(user_name, cert_no, age, address, salary, remark) VALUES";
         int loopCount = 100;
         int dataCount = 10000;
         long start = System.currentTimeMillis();
@@ -61,14 +62,14 @@ public class UtilsTest {
             StringBuilder sqlSuffix = new StringBuilder();
             // 内层循环 单次提交数据量
             for(int j = 1; j <= dataCount; j++){
-                String type = (i % 2 == 0 ? "00" : "01");
+                int age = (i * dataCount) % 30;
                 int seq = i * dataCount +  j;
                 sqlSuffix.append("(")
                         .append("'user"+ seq + "', ")
                         .append("'1000"+ seq + "', ")
-                        .append("'" + type + "', ")
+                        .append(age).append(",")
                         .append("'重庆市" + seq + "', ")
-                        .append("'" + type + "', ")
+                        .append(BigDecimal.valueOf(5000)).append(",")
                         .append("'江北区" + seq + "'")
                         .append(")");
                 //.append("), ");

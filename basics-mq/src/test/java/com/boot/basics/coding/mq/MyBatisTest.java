@@ -51,6 +51,7 @@ public class MyBatisTest {
         // batch1();
         // batch2();
         // batch3();
+        batch4();
         System.out.println("Cost Time = " + (System.currentTimeMillis() - start));
     }
     void batch1(){//82876ms
@@ -101,5 +102,22 @@ public class MyBatisTest {
         }
         tmpUserMapper.insertBatch(users);
         sqlSession.commit();
+    }
+
+    @Test
+    void batch4(){//3146ms
+        TmpUser tmpUser = null;
+        List<TmpUser> users = new ArrayList<>(500);
+        for(int i = 1002501; i <= 1003000; i++){
+            tmpUser = new TmpUser();
+            tmpUser.setUserName("user" + i);
+            tmpUser.setAge((short) (i % 30));
+            tmpUser.setCertNo("1000" + i);
+            tmpUser.setAddress("重庆市" + i);
+            tmpUser.setRemark("江北区" + i);
+            tmpUser.setSalary(BigDecimal.valueOf(5000));
+            users.add(tmpUser);
+        }
+        tmpUserMapper.insertBatch(users);
     }
 }

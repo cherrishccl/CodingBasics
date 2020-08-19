@@ -32,6 +32,11 @@ import com.boot.basics.coding.pattern.interpreter.AdvanceExpression;
 import com.boot.basics.coding.pattern.interpreter.Context;
 import com.boot.basics.coding.pattern.interpreter.Expression;
 import com.boot.basics.coding.pattern.interpreter.SimpleExpression;
+import com.boot.basics.coding.pattern.iterator.Iterator;
+import com.boot.basics.coding.pattern.iterator.List;
+import com.boot.basics.coding.pattern.iterator.ListImpl;
+import com.boot.basics.coding.pattern.mediator.ConcreteMediator;
+import com.boot.basics.coding.pattern.mediator.Mediator;
 import com.boot.basics.coding.pattern.prototype.Prototype;
 import com.boot.basics.coding.pattern.prototype.PrototypeConcrete;
 import com.boot.basics.coding.pattern.proxy.Object;
@@ -174,5 +179,26 @@ public class PatternTest {
         for (Expression eps : ctx.getList()) {
             eps.interpret(ctx);
         }
+
+        /***********************/
+        List list = new ListImpl();
+        list.add("a"); list.add("b"); list.add("c");
+        //第一种迭代方式
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+        System.out.println("=====");
+        //第二种迭代方式
+        for (int i = 0; i < list.getSize(); i++) {
+            System.out.println(list.get(i));
+        }
+
+        /***********************/
+        Mediator med = new ConcreteMediator();
+        //老板来了
+        med.notice("boss");
+        // 客户来了
+        med.notice("client");
     }
 }

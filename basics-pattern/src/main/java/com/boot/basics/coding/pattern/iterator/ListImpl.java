@@ -1,7 +1,7 @@
 package com.boot.basics.coding.pattern.iterator;
 
 /**
- * @Author chencl
+ * @Author cherrishccl
  * @Date 2020/8/19 10:05
  * @Version 1.0
  * @Description

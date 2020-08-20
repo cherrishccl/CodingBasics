@@ -11,4 +11,5 @@ include 'basics-mq'
 include 'basics-tools'
 include 'basics-ctest'
 include 'basics-netty'
+include 'basics-spring'
 

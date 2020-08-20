@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="com.boot.basics.coding.spring.scans.include"/>
-    <bean id="person" class="com.boot.basics.coding.spring.context.Person">
+    <bean id="person" class="com.boot.basics.coding.spring.Person">
         <property name="name" value="abc"/>
         <property name="age" value="1111"/>
     </bean>

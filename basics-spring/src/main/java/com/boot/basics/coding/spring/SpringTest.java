@@ -1,13 +1,14 @@
 package com.boot.basics.coding.spring;
 
-import com.boot.basics.coding.spring.context.Person;
 import com.boot.basics.coding.spring.context.PersonConfig;
 import com.boot.basics.coding.spring.scope.ThreadScope;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.env.Environment;
 
 import java.util.Arrays;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -23,9 +24,57 @@ public class SpringTest {
         // testXmlConfigScans();
         // testAnnotationConfigScans();
         // testScope();
-        testScope1();
+        // testScope1();
+        // testLazy();
+        // testCondition();
+        // testImport();
+        testFactoryBean();
     }
 
+    static void testFactoryBean(){
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.factory.PersonConfig.class);
+        System.out.println("IOC容器创建完成");
+        String[] names = ctx.getBeanDefinitionNames();
+        Arrays.stream(names).forEach(System.out::println);
+        // Object personFactoryBean = ctx.getBean("personFactoryBean");
+        // System.out.println("personFactoryBean实例的类型为：" + personFactoryBean.getClass());
+        Object personFactoryBean1 = ctx.getBean("personFactoryBean");
+        Object personFactoryBean2 = ctx.getBean("personFactoryBean");
+        System.out.println("personFactoryBean1类型：" + personFactoryBean1.getClass());
+        System.out.println("personFactoryBean2类型：" + personFactoryBean2.getClass());
+        System.out.println(personFactoryBean1 == personFactoryBean2);
+
+        Object personFactoryBean3 = ctx.getBean("&personFactoryBean");
+        System.out.println("personFactoryBean3类型：" + personFactoryBean3.getClass());
+    }
+
+    static void testImport(){
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.imports.PersonConfig.class);
+        System.out.println("IOC容器创建完成");
+        String[] names = ctx.getBeanDefinitionNames();
+        Arrays.stream(names).forEach(System.out::println);
+    }
+    static void testCondition(){
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.condition.PersonConfig.class);
+        System.out.println("IOC容器创建完成");
+
+        Environment environment = ctx.getEnvironment();
+        String osName = environment.getProperty("os.name");
+        System.out.println(osName);
+        String[] names = ctx.getBeanNamesForType(Person.class);
+        Arrays.stream(names).forEach(System.out::println);
+
+        Map<String, Person> beans = ctx.getBeansOfType(Person.class);
+        System.out.println(beans);
+
+    }
+    static void testLazy(){
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.lazy.PersonConfig.class);
+        System.out.println("IOC容器创建完成");
+        Person person = ctx.getBean(Person.class);
+        System.out.println(person);
+
+    }
     static void testScope1(){
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.scope.PersonConfig.class);
         //向容器中注册自定义的scope

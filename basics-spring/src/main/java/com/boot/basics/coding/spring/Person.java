@@ -1,4 +1,4 @@
-package com.boot.basics.coding.spring.context;
+package com.boot.basics.coding.spring;
 
 /**
  * @Author cherrishccl

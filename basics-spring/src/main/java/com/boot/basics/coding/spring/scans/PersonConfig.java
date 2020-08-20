@@ -1,10 +1,7 @@
 package com.boot.basics.coding.spring.scans;
 
-import com.boot.basics.coding.spring.context.Person;
-import com.boot.basics.coding.spring.scans.include.PersonDao;
+import com.boot.basics.coding.spring.Person;
 import org.springframework.context.annotation.*;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 
 /**
  * @Author cherrishccl

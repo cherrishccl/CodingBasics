@@ -1,9 +1,8 @@
-package com.boot.basics.coding.spring.lazy;
+package com.boot.basics.coding.spring.context;
 
 import com.boot.basics.coding.spring.Person;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
 
 /**
  * @Author cherrishccl
@@ -12,14 +11,12 @@ import org.springframework.context.annotation.Lazy;
  * @Description
  */
 @Configuration
-public class PersonConfig {
-    @Bean
-    @Lazy
-    public Person personX(){
+public class AppConfig {
+    @Bean("person1")
+    public Person person(){
         Person person = new Person();
-        person.setName("personX");
+        person.setName("ccccc");
         person.setAge(123);
-        System.out.println("给容器中添加PersonX....");
         return person;
     }
 }

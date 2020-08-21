@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @Conditional注解也可以标注在类上，标注在类上含义为：满足当前条件，这个类中配置的所有bean注册才能生效，大家可以自行验证@Conditional注解标注在类上的情况
  */
 @Configuration
-public class PersonConfig {
+public class AppConfig {
     @Conditional({WindowsCondition.class})
     @Bean
     public Person personX(){

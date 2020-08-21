@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Lazy;
  */
 @Configuration
 @Import({Department.class, Employee.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
-public class PersonConfig {
+public class AppConfig {
     @Bean
     public Person personX(){
         Person person = new Person();

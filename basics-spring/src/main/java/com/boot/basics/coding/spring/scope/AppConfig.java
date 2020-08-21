@@ -10,7 +10,7 @@ import org.springframework.context.annotation.*;
  * @Description
  */
 @Configuration
-public class PersonConfig {
+public class AppConfig {
     @Bean
     //@Scope("prototype")
     @Scope("thread")

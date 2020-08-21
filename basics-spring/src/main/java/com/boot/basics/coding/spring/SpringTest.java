@@ -1,6 +1,9 @@
 package com.boot.basics.coding.spring;
 
-import com.boot.basics.coding.spring.context.PersonConfig;
+import com.boot.basics.coding.spring.autowireds.Cat;
+import com.boot.basics.coding.spring.autowireds.Dog;
+import com.boot.basics.coding.spring.autowireds.Fish;
+import com.boot.basics.coding.spring.context.AppConfig;
 import com.boot.basics.coding.spring.scope.ThreadScope;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -28,11 +31,34 @@ public class SpringTest {
         // testLazy();
         // testCondition();
         // testImport();
-        testFactoryBean();
+        // testFactoryBean();
+        // testLifeCircle();
+        testAutowired();
     }
 
+    static void testAutowired(){
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.autowireds.AppConfig.class);
+        System.out.println("IOC容器创建完成");
+//        String[] names = ctx.getBeanDefinitionNames();
+//        Arrays.stream(names).forEach(System.out::println);
+        Dog dog = ctx.getBean(Dog.class);
+        System.out.println(dog);
+        Cat cat = ctx.getBean(Cat.class);
+        System.out.println(cat);
+        Fish fish = ctx.getBean(Fish.class);
+        System.out.println(fish);
+        ctx.close();
+    }
+
+    static void testLifeCircle(){
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.lifecircle.AppConfig.class);
+        System.out.println("IOC容器创建完成");
+        String[] names = ctx.getBeanDefinitionNames();
+        Arrays.stream(names).forEach(System.out::println);
+        ctx.close();
+    }
     static void testFactoryBean(){
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.factory.PersonConfig.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.factory.AppConfig.class);
         System.out.println("IOC容器创建完成");
         String[] names = ctx.getBeanDefinitionNames();
         Arrays.stream(names).forEach(System.out::println);
@@ -49,13 +75,13 @@ public class SpringTest {
     }
 
     static void testImport(){
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.imports.PersonConfig.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.imports.AppConfig.class);
         System.out.println("IOC容器创建完成");
         String[] names = ctx.getBeanDefinitionNames();
         Arrays.stream(names).forEach(System.out::println);
     }
     static void testCondition(){
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.condition.PersonConfig.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.condition.AppConfig.class);
         System.out.println("IOC容器创建完成");
 
         Environment environment = ctx.getEnvironment();
@@ -69,14 +95,14 @@ public class SpringTest {
 
     }
     static void testLazy(){
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.lazy.PersonConfig.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.lazy.AppConfig.class);
         System.out.println("IOC容器创建完成");
         Person person = ctx.getBean(Person.class);
         System.out.println(person);
 
     }
     static void testScope1(){
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.scope.PersonConfig.class);
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.scope.AppConfig.class);
         //向容器中注册自定义的scope
         ctx.getBeanFactory().registerScope(ThreadScope.THREAD_SCOPE, new ThreadScope());
         //使用容器获取bean
@@ -93,7 +119,7 @@ public class SpringTest {
         }
     }
     static void testScope(){
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.scope.PersonConfig.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.scope.AppConfig.class);
         String[] names = ctx.getBeanDefinitionNames();
         Arrays.stream(names).forEach(System.out::println);
         System.out.println("------------------------");
@@ -107,7 +133,7 @@ public class SpringTest {
      * 当使用includeFilters()指定只包含哪些组件时，需要禁用默认的过滤规则
      */
     static void testAnnotationConfigScans(){
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.scans.PersonConfig.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(com.boot.basics.coding.spring.scans.AppConfig.class);
         // Person person = (Person) ctx.getBean("personX");
         Person person = ctx.getBean(Person.class);
         System.out.println(person);
@@ -124,7 +150,7 @@ public class SpringTest {
         Arrays.stream(names).forEach(System.out::println);
     }
     static void testAnnotationConfig(){
-        ApplicationContext ctx = new AnnotationConfigApplicationContext(PersonConfig.class);
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
         Person person = ctx.getBean(Person.class);
         System.out.println(person);
 

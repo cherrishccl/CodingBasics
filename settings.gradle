@@ -12,4 +12,5 @@ include 'basics-tools'
 include 'basics-ctest'
 include 'basics-netty'
 include 'basics-spring'
+include 'basics-mybatis'
 

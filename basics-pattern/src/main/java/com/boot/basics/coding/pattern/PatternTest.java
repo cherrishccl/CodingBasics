@@ -37,6 +37,8 @@ import com.boot.basics.coding.pattern.iterator.List;
 import com.boot.basics.coding.pattern.iterator.ListImpl;
 import com.boot.basics.coding.pattern.mediator.ConcreteMediator;
 import com.boot.basics.coding.pattern.mediator.Mediator;
+import com.boot.basics.coding.pattern.memento.Caretaker;
+import com.boot.basics.coding.pattern.memento.Originator;
 import com.boot.basics.coding.pattern.prototype.Prototype;
 import com.boot.basics.coding.pattern.prototype.PrototypeConcrete;
 import com.boot.basics.coding.pattern.proxy.Object;
@@ -200,5 +202,18 @@ public class PatternTest {
         med.notice("boss");
         // 客户来了
         med.notice("client");
+
+        /***********************/
+        Originator org = new Originator();
+        org.setState("开会中");
+        Caretaker ctk = new Caretaker();
+        ctk.setMemento(org.createMemento());
+        //将数据封装在Caretaker
+        org.setState("睡觉中");
+        org.showState();
+        //显示
+        org.setMemento(ctk.getMemento());
+        //将数据重新导入
+        org.showState();
     }
 }

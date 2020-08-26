@@ -10,15 +10,15 @@ import org.springframework.context.annotation.*;
  * @Description
  */
 @Configuration
-public class AppConfig {
+public class ScopeAppConfig {
     @Bean
     //@Scope("prototype")
     @Scope("thread")
-    public Person personX(){
+    public Person personG(){
         Person person = new Person();
-        person.setName("personX");
+        person.setName("personG");
         person.setAge(123);
-        System.out.println("给容器中添加PersonX....");
+        System.out.println("给容器中添加PersonG....");
         return person;
     }
 }

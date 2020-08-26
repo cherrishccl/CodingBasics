@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @Description
  */
 @Configuration
-public class AppConfig {
+public class ContextAppConfig {
     @Bean("person1")
     public Person person(){
         Person person = new Person();

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @Description
  */
 @Configuration
-public class AppConfig {
+public class FactoryAppConfig {
     @Bean
     public PersonFactoryBean personFactoryBean(){
         return new PersonFactoryBean();

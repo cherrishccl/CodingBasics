@@ -14,11 +14,11 @@ import org.springframework.context.annotation.Lazy;
  */
 @Configuration
 @Import({Department.class, Employee.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
-public class AppConfig {
+public class ImportsAppConfig {
     @Bean
-    public Person personX(){
+    public Person personD(){
         Person person = new Person();
-        person.setName("personX");
+        person.setName("personD");
         person.setAge(123);
         System.out.println("给容器中添加PersonX....");
         return person;

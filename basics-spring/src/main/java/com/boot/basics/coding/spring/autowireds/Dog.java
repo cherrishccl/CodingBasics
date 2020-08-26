@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @Version 1.0
  * @Description
  */
-@Component
+@Component("dog1")
 public class Dog {
 
     /*@Autowired

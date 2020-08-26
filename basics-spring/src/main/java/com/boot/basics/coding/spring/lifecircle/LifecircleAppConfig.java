@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan(basePackages = {"com.boot.basics.coding.spring.lifecircle"})
-public class AppConfig {
+public class LifecircleAppConfig {
     @Bean(initMethod = "init", destroyMethod = "destroy")
     public Student student(){
         return new Student("Zero", 0);
@@ -26,7 +26,7 @@ public class AppConfig {
     }
 
     @Bean(initMethod = "init", destroyMethod = "destroy")
-    public Cat cat(){
+    public Cat catA(){
         return new Cat();
     }
 }

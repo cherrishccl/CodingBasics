@@ -13,29 +13,29 @@ import org.springframework.context.annotation.Configuration;
  * @Conditional注解也可以标注在类上，标注在类上含义为：满足当前条件，这个类中配置的所有bean注册才能生效，大家可以自行验证@Conditional注解标注在类上的情况
  */
 @Configuration
-public class AppConfig {
+public class ConditionAppConfig {
     @Conditional({WindowsCondition.class})
     @Bean
-    public Person personX(){
+    public Person personA(){
         Person person = new Person();
-        person.setName("personX");
+        person.setName("personA");
         person.setAge(123);
         System.out.println("给容器中添加PersonX....");
         return person;
     }
     @Conditional({LinuxCondition.class})
     @Bean
-    public Person personY(){
+    public Person personB(){
         Person person = new Person();
-        person.setName("personY");
+        person.setName("personB");
         person.setAge(124);
         System.out.println("给容器中添加PersonY....");
         return person;
     }
     @Bean
-    public Person personZ(){
+    public Person personC(){
         Person person = new Person();
-        person.setName("personZ");
+        person.setName("personC");
         person.setAge(125);
         System.out.println("给容器中添加PersonZ....");
         return person;

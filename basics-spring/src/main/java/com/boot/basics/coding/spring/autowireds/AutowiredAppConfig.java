@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan(basePackages = {"com.boot.basics.coding.spring.autowireds"})
-public class AppConfig {
+public class AutowiredAppConfig {
     // cat = null
     /*@Bean
     public Fish fish(){

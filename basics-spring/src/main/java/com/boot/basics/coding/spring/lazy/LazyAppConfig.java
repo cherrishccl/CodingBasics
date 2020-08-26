@@ -12,12 +12,12 @@ import org.springframework.context.annotation.Lazy;
  * @Description
  */
 @Configuration
-public class AppConfig {
+public class LazyAppConfig {
     @Bean
     @Lazy
-    public Person personX(){
+    public Person personE(){
         Person person = new Person();
-        person.setName("personX");
+        person.setName("personE");
         person.setAge(123);
         System.out.println("给容器中添加PersonX....");
         return person;

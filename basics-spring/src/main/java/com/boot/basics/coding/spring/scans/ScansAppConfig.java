@@ -35,11 +35,11 @@ import org.springframework.context.annotation.*;
 // CUSTOM：按照自定义规则进行过滤
 @ComponentScan(basePackages = "com.boot.basics.coding.spring.scans.include",
         includeFilters = {@ComponentScan.Filter(type = FilterType.CUSTOM, classes = {CustomTypeFilter.class})}, useDefaultFilters = false)
-public class AppConfig {
+public class ScansAppConfig {
     @Bean
-    public Person personX(){
+    public Person personF(){
         Person person = new Person();
-        person.setName("personX");
+        person.setName("personF");
         person.setAge(123);
         return person;
     }

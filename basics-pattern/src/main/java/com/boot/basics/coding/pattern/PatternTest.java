@@ -39,6 +39,7 @@ import com.boot.basics.coding.pattern.mediator.ConcreteMediator;
 import com.boot.basics.coding.pattern.mediator.Mediator;
 import com.boot.basics.coding.pattern.memento.Caretaker;
 import com.boot.basics.coding.pattern.memento.Originator;
+import com.boot.basics.coding.pattern.observer.*;
 import com.boot.basics.coding.pattern.prototype.Prototype;
 import com.boot.basics.coding.pattern.prototype.PrototypeConcrete;
 import com.boot.basics.coding.pattern.proxy.Object;
@@ -158,7 +159,8 @@ public class PatternTest {
         RequestHandle tl = new TLRequestHandle(pm);
         //team leader处理离职请求
         Request request = new Request();
-        tl.handle(request); System.out.println("===========");
+        tl.handle(request);
+        System.out.println("===========");
         //team leader处理加薪请求
         request = new SalaryRequest();
         tl.handle(request);
@@ -184,7 +186,9 @@ public class PatternTest {
 
         /***********************/
         List list = new ListImpl();
-        list.add("a"); list.add("b"); list.add("c");
+        list.add("a");
+        list.add("b");
+        list.add("c");
         //第一种迭代方式
         Iterator it = list.iterator();
         while (it.hasNext()) {
@@ -215,5 +219,16 @@ public class PatternTest {
         org.setMemento(ctk.getMemento());
         //将数据重新导入
         org.showState();
+
+        /***********************/
+        Policeman thPol = new TianHePoliceman();
+        Policeman hpPol = new HuangPuPoliceman();
+        Citizen citizen = new HuangPuCitizen(hpPol);
+        citizen.sendMessage("unnormal");
+        citizen.sendMessage("normal");
+        System.out.println("===========");
+        citizen = new TianHeCitizen(thPol);
+        citizen.sendMessage("normal");
+        citizen.sendMessage("unnormal");
     }
 }

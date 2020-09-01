@@ -45,6 +45,7 @@ import com.boot.basics.coding.pattern.prototype.PrototypeConcrete;
 import com.boot.basics.coding.pattern.proxy.Object;
 import com.boot.basics.coding.pattern.proxy.ProxyObject;
 import com.boot.basics.coding.pattern.sigleton.*;
+import com.boot.basics.coding.pattern.state.Rain;
 
 /**
  * @Author cherrishccl
@@ -230,5 +231,10 @@ public class PatternTest {
         citizen = new TianHeCitizen(thPol);
         citizen.sendMessage("normal");
         citizen.sendMessage("unnormal");
+
+        /***********************/
+        com.boot.basics.coding.pattern.state.Context ctx1 = new com.boot.basics.coding.pattern.state.Context();
+        ctx1.setWeather(new Rain());
+        System.out.println(ctx1.reportWeather());
     }
 }

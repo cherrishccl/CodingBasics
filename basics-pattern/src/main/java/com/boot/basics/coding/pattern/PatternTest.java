@@ -46,6 +46,9 @@ import com.boot.basics.coding.pattern.proxy.Object;
 import com.boot.basics.coding.pattern.proxy.ProxyObject;
 import com.boot.basics.coding.pattern.sigleton.*;
 import com.boot.basics.coding.pattern.state.Rain;
+import com.boot.basics.coding.pattern.strategy.StrategyA;
+import com.boot.basics.coding.pattern.strategy.StrategyB;
+import com.boot.basics.coding.pattern.strategy.StrategyC;
 
 /**
  * @Author cherrishccl
@@ -236,5 +239,12 @@ public class PatternTest {
         com.boot.basics.coding.pattern.state.Context ctx1 = new com.boot.basics.coding.pattern.state.Context();
         ctx1.setWeather(new Rain());
         System.out.println(ctx1.reportWeather());
+
+        com.boot.basics.coding.pattern.strategy.Context ctxy = new com.boot.basics.coding.pattern.strategy.Context(new StrategyA());
+        ctxy.doMethod();
+        ctxy = new com.boot.basics.coding.pattern.strategy.Context(new StrategyB());
+        ctxy.doMethod();
+        ctxy = new com.boot.basics.coding.pattern.strategy.Context(new StrategyC());
+        ctxy.doMethod();
     }
 }

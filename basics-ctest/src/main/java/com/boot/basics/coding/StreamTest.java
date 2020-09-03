@@ -2,11 +2,12 @@ package com.boot.basics.coding;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @Author chencl
+ * @Author cherrishccl
  * @Date 2020/9/2 16:23
  * @Version 1.0
  * @Description
@@ -22,14 +23,25 @@ public class StreamTest {
         System.out.println("cost: " + (System.currentTimeMillis() - start));
     }
     private static void print4(List<User> list){
+        CountDownLatch latch = new CountDownLatch(list.size());
+        AtomicInteger ai = new AtomicInteger(0);
         list.parallelStream().forEach(user -> {
             try {
+                ai.incrementAndGet();
+                latch.countDown();
                 TimeUnit.MILLISECONDS.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             System.out.println(Thread.currentThread().getName()+ " -:-> " + user);
         });
+        try {
+            latch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("total: " + ai.get());
+
     }
     private static void print3(List<User> list){
         list.stream().forEach(user -> {

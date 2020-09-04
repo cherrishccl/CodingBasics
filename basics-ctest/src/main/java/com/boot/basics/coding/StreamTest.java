@@ -19,13 +19,20 @@ public class StreamTest {
             users.add(new User(String.valueOf(i), "name" + i));
         }
         long start = System.currentTimeMillis();
-        print4(users);
+        try{
+            print4(users);
+        }catch (Exception e){
+            System.out.println("------>" + e.getLocalizedMessage());
+        }
         System.out.println("cost: " + (System.currentTimeMillis() - start));
     }
     private static void print4(List<User> list){
         CountDownLatch latch = new CountDownLatch(list.size());
         AtomicInteger ai = new AtomicInteger(0);
         list.parallelStream().forEach(user -> {
+            if(user.no.equals("1000")){
+                int i = 10 / 0;
+            }
             try {
                 ai.incrementAndGet();
                 latch.countDown();

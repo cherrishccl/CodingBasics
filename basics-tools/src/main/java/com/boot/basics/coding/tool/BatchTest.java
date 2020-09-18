@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * @Date 2020/9/4 17:01
  * @Version 1.0
  * @Description PreparedStatement.prepareStatement(sql) 中 addBatch() 执行1次, addBatch(sql)执行N次
- * 正确使用方式: PreparedStatement + addBatch(), Statement + addBatch(sql)
+ * 正确使用方式: PreparedStatement + addBatch(), Statement addBatch(sql)
  */
 public class BatchTest {
     public static void main(String[] args) {

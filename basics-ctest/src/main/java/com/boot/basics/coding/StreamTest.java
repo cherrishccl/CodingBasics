@@ -1,5 +1,6 @@
 package com.boot.basics.coding;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -20,12 +21,40 @@ public class StreamTest {
         }
         long start = System.currentTimeMillis();
         try{
-            print4(users);
+            //print4(users);
         }catch (Exception e){
             System.out.println("------>" + e.getLocalizedMessage());
         }
         System.out.println("cost: " + (System.currentTimeMillis() - start));
+
+        streamEx();
     }
+
+    private static void streamEx(){
+        List<Integer> list = new ArrayList<>(100);
+        for(int i = 0; i < 100; i++){
+            list.add(i + 1);
+        }
+        list.parallelStream().forEach(i -> {
+            try {
+                div(i);
+            } catch (IOException e) {
+                throw new RuntimeException("00000000000000000");
+            }
+
+        });
+    }
+
+    private static Integer div(Integer i) throws IOException {
+        try{
+          return i / 0;
+        }catch (Exception e){
+            throw new IOException();
+        }finally {
+            System.out.println(Thread.currentThread().getName() + "------------------" + i);
+        }
+    }
+
     private static void print4(List<User> list){
         CountDownLatch latch = new CountDownLatch(list.size());
         AtomicInteger ai = new AtomicInteger(0);

@@ -9,7 +9,8 @@ import java.sql.SQLException;
  * @Author cherrishccl
  * @Date 2020/9/4 17:01
  * @Version 1.0
- * @Description addBatch() 执行1次, addBatch(sql)执行N次
+ * @Description PreparedStatement.prepareStatement(sql) 中 addBatch() 执行1次, addBatch(sql)执行N次
+ * 正确使用方式: PreparedStatement + addBatch(), Statement + addBatch(sql)
  */
 public class BatchTest {
     public static void main(String[] args) {
@@ -47,17 +48,18 @@ public class BatchTest {
             }
             if(null != stmt){
                 for(int i = 1; i <= 10000; i++){
-                    /*String batchSql = "insert into t_user(user_name, age, salary, max_size) values (" +
-                            "'name" + i + "'," + i + "," + i + "," + i +
-                            ")";*/
                     try {
+                        String batchSql = "insert into t_user(user_name, age, salary, max_size) values (" +
+                                "'name" + i + "'," + i + "," + i + "," + i +
+                                ")";
+                        stmt.addBatch(batchSql);
+
                         // stmt.setString(1, "name" + i);
-                        stmt.setInt(1, i + 1);
+                        /*stmt.setInt(1, i + 1);
                         stmt.setInt(2, i + 1000);
                         stmt.setInt(3, i + 1);
                         stmt.setInt(4, i);
-                        //stmt.addBatch(batchSql);
-                        stmt.addBatch();
+                        stmt.addBatch();*/
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }

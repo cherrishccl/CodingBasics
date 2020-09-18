@@ -20,10 +20,10 @@ import java.util.List;
  */
 public class ExcelTest {
     public static void main(String[] args) throws SQLException, ParseException, IOException {
-        String url = "jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&allowMultiQueries=true&rewriteBatchedStatements=true";
+        String url = "jdbc:mysql://10.0.68.215:3306/yhloan_bh?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&allowMultiQueries=true&rewriteBatchedStatements=true";
         String driver = "com.mysql.cj.jdbc.Driver";
         String username = "root";
-        String password = "123456";
+        String password = "yhjr2016YH";
         String sql = "select jobno, step, sub_step, process_function, bhdate, start_time, end_time  from bh_proc_log order by bhdate, jobno, step";
         JdbcUtils jdbcUtils = new JdbcUtils(driver, url, username, password);
         Connection conn = jdbcUtils.getConnection();

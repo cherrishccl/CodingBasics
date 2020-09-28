@@ -60,6 +60,8 @@ public class BatchTest1 {
 //            batch8(driver, url, username, password); // 平均耗时602
 //            batch8(driver, url1, username, password); // 平均耗时>>>>>120000
 
+        batch9(driver, url, username, password);
+
     }
 
     private static Connection connect(String driver, String url, String username, String password) throws ClassNotFoundException, SQLException {
@@ -192,6 +194,25 @@ public class BatchTest1 {
         }
         stmt.executeBatch();
         conn.commit();
+        // 6162
+        System.out.println("耗时======>" + (System.currentTimeMillis() - start));
+    }
+
+    private static void batch9(String driver, String url, String username, String password) throws SQLException, ClassNotFoundException {
+        Connection conn = connect(driver, url, username, password);
+        PreparedStatement stmt = conn.prepareStatement("insert into t_user(user_name, age, salary, max_size) values (?, ?, ?, ?)");
+        conn.setAutoCommit(false);
+        long start = System.currentTimeMillis();
+        for(int i = 0; i < 10000; i++){
+            stmt.setInt(1, i + 1);
+            stmt.setInt(2, i + 1000);
+            stmt.setInt(3, i + 1);
+            stmt.setInt(4, i);
+            stmt.addBatch();
+        }
+        stmt.executeBatch();
+        //conn.commit();
+        conn.setAutoCommit(true);
         // 6162
         System.out.println("耗时======>" + (System.currentTimeMillis() - start));
     }

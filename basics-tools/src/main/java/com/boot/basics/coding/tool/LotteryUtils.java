@@ -1,7 +1,6 @@
 package com.boot.basics.coding.tool;
 
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
 
 /**
  * @Author cherrishccl
@@ -12,37 +11,64 @@ import java.util.Random;
 public class LotteryUtils {
     public static void main(String[] args) {
         generateLotterySSQ1();
+        System.out.println();
         generateLotterySSQ2();
+        System.out.println();
+        generateLotteryDLT();
+    }
+
+    public static void generateLotteryDLT() {
+        //前区list集合
+        List<Integer> pre = new ArrayList<>();
+        //后区list集合
+        List<Integer> post = new ArrayList<>();
+        //前区1-35，随机五个不重复
+        while (pre.size() < 5) {
+            int a = (int) (Math.random() * 35 + 1);
+            if (!pre.contains(a)) {
+                pre.add(a);
+            }
+        }
+        //按升序排列
+        Collections.sort(pre);
+        printArray(pre, ", ");
+        //后区1-12随机2个不重复
+        while (post.size() < 2) {
+            int b = (int) (Math.random() * 12 + 1);
+            if (!post.contains(b)) {
+                post.add(b);
+            }
+        }
+        //按升序排列
+        Collections.sort(post);
+        printArray(post, ", ");
     }
 
     public static void generateLotterySSQ1() {
         Random rd = new Random();
         //方法二:普通方法
-        int x[] = new int[6];
+        int[] red = new int[6];
         int i;
-        int l, index = 0, num;
+        int[] blue = new int[]{rd.nextInt(16) + 1};
+        int index = 0, num;
         //随机产生0到15的整数，+ 1，随机产生1到16的整数
-        l = rd.nextInt(16) + 1;
         int con;
-        while (x.length > index) {
+        while (red.length > index) {
             num = rd.nextInt(33) + 1;
-            con = isIn(x, num);
+            con = isIn(red, num);
             if (con == 1) {
-                x[index] = num;
+                red[index] = num;
                 index++;
             }
-
         }
 
         //排序
-        System.out.println("开奖号码:");
-        Arrays.sort(x);//从小到大排列的方法
-        System.out.print("红球:");
-        for (i = 0; i < x.length; i++) {
-            System.out.printf("%02d\t", x[i]);//格式输出0表示指定空位填0
-        }
-        System.out.print("蓝球: ");
-        System.out.printf("%02d\n", l);
+        System.out.println("lottery:");
+        Arrays.sort(red);
+        System.out.print("red:");
+        printArray(red, ", ");
+        System.out.print("blue: ");
+        printArray(blue, ", ");
 
 
     }
@@ -50,33 +76,30 @@ public class LotteryUtils {
     public static void generateLotterySSQ2() {
         int i, j;
         Random rd = new Random();
-        int x[] = new int[6];
+        int[] red = new int[6];
         int a;
-        int l;
-        l = rd.nextInt(16) + 1;
-        for (i = 0; i < x.length; i++) {
+        int[] blue = new int[]{rd.nextInt(16) + 1};
+        for (i = 0; i < red.length; i++) {
             a = rd.nextInt(33) + 1;
-            x[i] = a;
+            red[i] = a;
             for (j = 0; j < i; j++) {
-                if (x[i] == x[j]) {
+                if (red[i] == red[j]) {
                     a = rd.nextInt(33) + 1;
-                    x[i] = a;
+                    red[i] = a;
                 }
             }
         }
 
         //排序
-        System.out.println("开奖号码:");
-        Arrays.sort(x);
-        System.out.print("红球:");
-        for (i = 0; i < x.length; i++) {
-            System.out.printf("%02d\t", x[i]);
-        }
-        System.out.print("蓝球: ");
-        System.out.printf("%02d\n", l);
+        System.out.println("lottery:");
+        Arrays.sort(red);
+        System.out.print("red:");
+        printArray(red, ", ");
+        System.out.print("blue: ");
+        printArray(blue, ", ");
     }
 
-    public static int isIn(int array[], int n) {
+    private static int isIn(int array[], int n) {
         int i;
         for (i = 0; i < array.length; i++) {
             if (n == array[i]) {
@@ -84,5 +107,32 @@ public class LotteryUtils {
             }
         }
         return 1;
+    }
+
+    private static void printArray(int[] arr, String delimiter) {
+        if(null == delimiter){
+            delimiter = "\t";
+        }
+        System.out.printf("[");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.printf("%02d", arr[i]);
+            if (i != arr.length - 1) {
+                System.out.printf(delimiter);
+            }
+        }
+        System.out.printf("]");
+    }
+    private static void printArray(List<Integer> list, String delimiter) {
+        if(null == delimiter){
+            delimiter = "\t";
+        }
+        System.out.printf("[");
+        for (int i = 0; i < list.size(); i++) {
+            System.out.printf("%02d", list.get(i));
+            if (i != list.size() - 1) {
+                System.out.printf(delimiter);
+            }
+        }
+        System.out.printf("]");
     }
 }

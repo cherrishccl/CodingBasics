@@ -2,8 +2,11 @@ package com.boot.basics.coding.tool;
 
 import java.math.BigDecimal;
 import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -13,10 +16,16 @@ import java.util.List;
  * @Description
  */
 public class UtilsTest {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, ParseException {
         //test1();
-        test2();
+        //test2();
         //test3();
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date = sdf.parse("2020-10-22 17:15:00");
+        System.out.println(date.getTime());
+
+        System.out.println(SnowflakeUtils.genId());
     }
 
     private static void test3() throws SQLException {

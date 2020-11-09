@@ -13,4 +13,5 @@ include 'basics-ctest'
 include 'basics-netty'
 include 'basics-spring'
 include 'basics-mybatis'
+include 'basic-job'
 

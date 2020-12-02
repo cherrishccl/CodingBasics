@@ -20,8 +20,8 @@ public class SnowflakeUtils {
     /** 毫秒内序列所占长度 */
     private static final int SEQ_LEN = 12;
 
-    /** 定义起始时间 2020-08-25 00:00:00 */
-    private static final long START_TIME = 1598284800000L;
+    /** 定义起始时间 2020-12-02 14:30:00 */
+    private static final long START_TIME = 1606890600000L;
     /** 上次生成ID的时间截 */
     private static long LAST_TIME_STAMP = -1L;
     /** 时间部分向左移动的位数 22 */

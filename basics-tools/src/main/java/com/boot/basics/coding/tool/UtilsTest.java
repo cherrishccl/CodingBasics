@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Author cherrishccl
@@ -16,16 +17,19 @@ import java.util.List;
  * @Description
  */
 public class UtilsTest {
-    public static void main(String[] args) throws SQLException, ParseException {
+    public static void main(String[] args) throws SQLException, ParseException, InterruptedException {
         //test1();
         //test2();
         //test3();
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date date = sdf.parse("2020-10-22 17:15:00");
+        Date date = sdf.parse("2020-12-02 14:30:00");
         System.out.println(date.getTime());
 
-        System.out.println(SnowflakeUtils.genId());
+        for(int i = 0; i < 1000; i++){
+            TimeUnit.MILLISECONDS.sleep(1L);
+            System.out.println(SnowflakeUtils.genId());
+        }
     }
 
     private static void test3() throws SQLException {

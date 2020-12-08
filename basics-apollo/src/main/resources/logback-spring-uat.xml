@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds">
+    <!-- 请根据实际情况修改 -->
+    <springProperty scope="context" name="logPath" source="log.path" defaultValue="logs/apollo-client/"/>
+    <!-- log name --><springProperty scope="context" name="appname" source="spring.application.name" defaultValue="apollo-client"/>
+
+    <property name="CONSOLE_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%L] - [] - %msg %n"/>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>${CONSOLE_LOG_PATTERN}</Pattern>
+        </encoder>
+    </appender>
+
+    <!-- 时间滚动输出 level为info warn error debug日志 -->
+    <appender name="ALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>./logs/${appname}/%d{yyyy-MM-dd}%i.log</FileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1024MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <MaxHistory>30000</MaxHistory>
+        </rollingPolicy>
+        <encoder>
+            <Pattern>${CONSOLE_LOG_PATTERN}</Pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+
+    <!-- 打印SQL日志(请根据实际情况修改) -->
+    <logger name="com.boot" level="DEBUG"/>
+
+    <springProfile name="dev">
+        <root level="info">
+            <appender-ref ref="CONSOLE" />
+            <appender-ref ref="ALL" />
+        </root>
+    </springProfile>
+    <!-- 异步输出 -->
+    <appender name="ASYNC-CONSOLE" class="ch.qos.logback.classic.AsyncAppender">
+        <!-- 不丢失日志.默认的,如果队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志 -->
+        <discardingThreshold>0</discardingThreshold>
+        <!-- 更改默认的队列的深度,该值会影响性能.默认值为256 -->
+        <queueSize>256</queueSize>
+        <!-- 添加附加的appender,最多只能添加一个 -->
+        <appender-ref ref="CONSOLE"/>
+    </appender>
+    <appender name="ASYNC-ALL" class="ch.qos.logback.classic.AsyncAppender">
+        <discardingThreshold>0</discardingThreshold>
+        <queueSize>256</queueSize>
+        <appender-ref ref="ALL"/>
+    </appender>
+</configuration>

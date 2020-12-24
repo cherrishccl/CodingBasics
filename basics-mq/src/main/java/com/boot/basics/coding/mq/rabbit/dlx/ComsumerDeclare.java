@@ -4,7 +4,7 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @Author chencl
+ * @Author cherrishccl
  * @Date 2020/10/30 17:14
  * @Version 1.0
  * @Description

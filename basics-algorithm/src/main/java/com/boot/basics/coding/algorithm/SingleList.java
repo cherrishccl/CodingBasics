@@ -1,7 +1,7 @@
 package com.boot.basics.coding.algorithm;
 
 /**
- * @Author chencl
+ * @Author cherrishccl
  * @Date 2020/12/23 9:25
  * @Version 1.0
  * @Description
@@ -37,10 +37,27 @@ public class SingleList {
     public void reverse(){
         Node h = head;
         //Node n = reverse0(head);
-        Node n = reverse1(head);
+        // Node n = reverse1(head);
+        Node n = reverse2(head);
         tail = h;
         head = n;
 
+    }
+
+    private static Node reverse2(Node head){
+        // 指向当前节点的后驱
+        Node next = null;
+        // 指向当前节点的前驱
+        Node pre = null;
+        while (null != head){
+            next = head.next;
+            // 当前节点的后驱指向前驱
+            head.next = pre;
+            pre = head;
+            // 处理下一个节点
+            head = next;
+        }
+        return pre;
     }
 
     private static Node reverse1(Node head){

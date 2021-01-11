@@ -1,7 +1,9 @@
 package com.boot.basics.coding.spring.scope;
 
 import com.boot.basics.coding.spring.Person;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 /**
  * @Author cherrishccl

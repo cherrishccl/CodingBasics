@@ -1,7 +1,5 @@
 package com.boot.basics.coding.mybatis.dao;
 
-import lombok.ToString;
-
 import java.io.Serializable;
 
 /**

@@ -1,6 +1,5 @@
 package com.boot.basics.coding.spring.scans.include;
 
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 /**

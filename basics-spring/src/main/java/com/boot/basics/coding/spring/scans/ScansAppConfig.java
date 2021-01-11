@@ -1,7 +1,10 @@
 package com.boot.basics.coding.spring.scans;
 
 import com.boot.basics.coding.spring.Person;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
 
 /**
  * @Author cherrishccl

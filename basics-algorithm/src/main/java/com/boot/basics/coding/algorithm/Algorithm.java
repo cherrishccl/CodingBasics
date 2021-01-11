@@ -1,10 +1,5 @@
 package com.boot.basics.coding.algorithm;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 /**
  * @Author cherrishccl
  * @Date 2020/8/4 15:11

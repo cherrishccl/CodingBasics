@@ -1,6 +1,5 @@
 package com.boot.basics.coding.netty.echo;
 
-import com.boot.basics.coding.netty.echo.EchoClientHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;

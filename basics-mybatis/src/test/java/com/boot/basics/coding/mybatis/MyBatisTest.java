@@ -3,19 +3,14 @@ package com.boot.basics.coding.mybatis;
 import com.boot.basics.coding.mybatis.dao.User;
 import com.boot.basics.coding.mybatis.dao.UserMapper;
 import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.jupiter.api.Test;
-import org.mybatis.spring.SqlSessionTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.math.BigDecimal;
-import java.util.ArrayList;
 
 
 /**

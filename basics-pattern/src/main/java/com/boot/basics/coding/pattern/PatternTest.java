@@ -21,7 +21,6 @@ import com.boot.basics.coding.pattern.composite.Department2;
 import com.boot.basics.coding.pattern.decorator.Man;
 import com.boot.basics.coding.pattern.decorator.ManDecoratorA;
 import com.boot.basics.coding.pattern.decorator.ManDecoratorB;
-import com.boot.basics.coding.pattern.decorator.Person;
 import com.boot.basics.coding.pattern.facade.*;
 import com.boot.basics.coding.pattern.factory.ManagerFactory;
 import com.boot.basics.coding.pattern.factory.ProgramerFactory;

@@ -35,3 +35,6 @@ config/
 .vscode/
 
 **/*.hprof
+**/*.log
+
+**/target

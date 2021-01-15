@@ -1,5 +1,6 @@
 package com.boot.basics.coding;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -34,6 +35,12 @@ public class CommonTest {
         System.out.println(timemills.length);
         System.out.println(s.size());
 
+        BigDecimal base = new BigDecimal("1.1");
+        for(int i = 0; i < 365; i++){
+            base = base.multiply(new BigDecimal("1.1"));
+            //System.out.println(base.toPlainString());
+        }
+        System.out.println(base.toPlainString());
     }
 
     static class GetTimeMillis implements Runnable{

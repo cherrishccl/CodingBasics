@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds">
     <!-- 请根据实际情况修改 -->
-    <springProperty scope="context" name="logPath" source="log.path" defaultValue="logs/apollo-client/"/>
-    <!-- log name --><springProperty scope="context" name="appname" source="spring.application.name" defaultValue="apollo-client"/>
+    <springProperty scope="context" name="logPath" source="log.path" defaultValue="logs/config-center/"/>
+    <!-- log name --><springProperty scope="context" name="appname" source="spring.application.name" defaultValue="config-center"/>
 
     <property name="CONSOLE_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%L] - [] - %msg %n"/>
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">

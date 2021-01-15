@@ -118,7 +118,7 @@
 
     <modules>
         <module>basics-algorithm</module>
-        <module>basics-apollo</module>
+        <module>basics-config-center</module>
         <module>basics-ctest</module>
         <module>basics-job</module>
         <module>basics-mq</module>

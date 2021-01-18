@@ -1,0 +1,24 @@
+server:
+  port: 8888
+
+nacos:
+  config:
+    server-addr: localhost:8848
+#    namespace: public
+spring:
+  application:
+    name: config-center
+  profiles:
+    active: apollo
+  servlet:
+    multipart:
+      max-file-size: 128MB
+      max-request-size: 128MB
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

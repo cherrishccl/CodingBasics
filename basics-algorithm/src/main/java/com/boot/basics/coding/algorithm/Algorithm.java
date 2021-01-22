@@ -25,6 +25,13 @@ public class Algorithm {
     }
 
     /**
+     * 一个数被2除余1,被3除余2,被4除余3,被5除余4,被6除余5
+     */
+    public static void num(){
+
+    }
+
+    /**
      * 数组有两个个数出现奇数个, 其余偶数个
      * @param arr
      * @return

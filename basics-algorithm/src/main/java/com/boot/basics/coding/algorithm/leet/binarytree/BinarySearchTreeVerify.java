@@ -9,7 +9,7 @@ import java.util.List;
  * @Version 1.0
  * @Description 验证二叉搜索树
  */
-public class VerifyBinarySearchTree {
+public class BinarySearchTreeVerify {
     public static void main(String[] args) {
         TreeNode root = TreeNode.initTree();
         System.out.println(solution1(root));

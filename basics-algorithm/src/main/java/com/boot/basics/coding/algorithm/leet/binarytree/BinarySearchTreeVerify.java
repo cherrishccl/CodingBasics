@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Author chencl
+ * @Author cherrishccl
  * @Date 2021/2/2 9:35
  * @Version 1.0
  * @Description 验证二叉搜索树

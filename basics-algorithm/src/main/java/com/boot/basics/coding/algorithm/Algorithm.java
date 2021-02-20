@@ -22,13 +22,25 @@ public class Algorithm {
 
         arr = new int[]{9, 9, 8, 8, 5, 5, 6, 10, 10, 11, 11, 19};
         numOddCount1(arr);
+
+        System.out.println(num());
     }
 
     /**
      * 一个数被2除余1,被3除余2,被4除余3,被5除余4,被6除余5
+     * 即: 一个数+1, 能被2 3 4 5 6整除, 最小公倍数
+     * 除2余1为奇数, 除5余4尾数为9
      */
-    public static void num(){
-
+    public static int num(){
+        int res = 0;
+        int i = 0;
+        while (true){
+            res = i * 10 + 9;
+            if(res % 2 == 1 && res % 3 == 2 && res % 4 == 3 && res % 5 == 4 && res % 6 == 5){
+                return res;
+            }
+            i++;
+        }
     }
 
     /**

@@ -29,6 +29,47 @@ public class ListNode<T> {
 
     }
 
+    /**
+     * 合并两个有序链表
+     * 1->2->3
+     * 2->3->4
+     * @param l1
+     * @param l2
+     * @return
+     */
+    public static ListNode<Integer> mergeTwoLists(ListNode<Integer> l1, ListNode<Integer> l2){
+        if(null == l1){
+            return l2;
+        }
+        if(null == l2){
+            return l1;
+        }
+        if(l1.val < l2.val){
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
+        }else {
+            l2.next = mergeTwoLists(l2.next, l1);
+            return l2;
+        }
+    }
+
+    public static ListNode<Integer> mergeTwoLists2(ListNode<Integer> l1, ListNode<Integer> l2){
+       ListNode<Integer> dummy = new ListNode<>(0);
+       ListNode<Integer> cur = dummy;
+       while (null != l1 && null != l2){
+           if(l1.val < l2.val){
+               cur.next = l1;
+               l1 = l1.next;
+           }else {
+               cur.next = l2;
+               l2 = l2.next;
+           }
+           cur = cur.next;
+       }
+       cur.next = null == l1 ? l2 : l1;
+       return dummy.next;
+    }
+
     public static <T> ListNode<T> removeNthEnd(ListNode<T> head, int n){
         ListNode dummy = new ListNode(0);
         dummy.next = head;

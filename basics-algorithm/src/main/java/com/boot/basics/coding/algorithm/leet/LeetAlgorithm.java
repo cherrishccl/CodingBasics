@@ -1,5 +1,11 @@
 package com.boot.basics.coding.algorithm.leet;
 
+import com.boot.basics.coding.algorithm.listnode.ListNode;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
 /**
  * @Author cherrishccl
  * @Date 2021/2/19 15:28
@@ -7,12 +13,44 @@ package com.boot.basics.coding.algorithm.leet;
  * @Description
  */
 public class LeetAlgorithm {
+
+    private static boolean validBrackets(String src){
+        HashMap<Character, Integer> map = new HashMap<Character, Integer>(){{
+            put('(', 1);put(')', 4);
+            put('[', 2);put(']', 5);
+            put('{', 3);put('}', 6);
+        }};
+        Stack<Integer> stack = new Stack<>();
+
+        for(Character c : src.toCharArray()){
+            int val = map.get(c);
+            if(val >= 1 && val <= 3){
+                stack.push(val);
+            }else {
+                int val2 = 0;
+                if(!stack.isEmpty()){
+                    val2 = stack.peek();
+                    if(val2 + 3 == val){
+                        stack.pop();
+                    }else {
+                        return false;
+                    }
+                }else {
+                    return false;
+                }
+            }
+        }
+        if(stack.isEmpty()){
+            return true;
+        }
+        return false;
+    }
     /**
      * 最长公共前缀
      * @param strs
      * @return
      */
-    private String longestCommonPrefix(String[] strs) {
+    private static String longestCommonPrefix(String[] strs) {
         if(null == strs || strs.length == 0){
             return "";
         }

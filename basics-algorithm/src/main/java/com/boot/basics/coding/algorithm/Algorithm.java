@@ -24,6 +24,60 @@ public class Algorithm {
         numOddCount1(arr);
 
         System.out.println(num());
+        System.out.println(sqrt2());
+        System.out.println(newtonSqrt2());
+        System.out.println(newton(2D));
+    }
+
+    /**
+     * 已知 sqrt (2)约等于 1.414，要求不用数学库，求 sqrt (2)精确到小数点后 10 位。
+     * 1. 已知 sqrt(2)约等于 1.414，那么就可以在(1.4, 1.5)区间做二分
+     * 2. 牛顿迭代法
+     * @return
+     */
+    public static double sqrt2(){
+        double epsilon = 1e-10;
+        double low = 1.4D, high = 1.5D;
+        double mid = (low + high) / 2;
+        while (high - low < epsilon){
+            if(mid * mid > 2){
+                high = mid;
+            }else {
+                low = mid;
+            }
+            mid = (high + low) / 2;
+        }
+        return mid;
+    }
+    public static double newtonSqrt2(){
+        double epsilon = 1e-10;
+        double c = 2D;
+        double x = c;
+        double y = (x + c / x) / 2;
+        while (x - y > epsilon){
+            x = y;
+            y = (x + c / x) / 2;
+        }
+        return x;
+    }
+
+    /**
+     * 牛顿代入法： 求c的平方根, f(x) = x2 - c;
+     * @param c
+     * @return
+     */
+    public static double newton(double c){
+        if(c < 0){
+            return Double.NaN;
+        }
+        double e = 1e-10;
+        double x = c;
+        double y = (x + c / x) / 2;
+        while (Math.abs(x - y) > e){
+            x = y;
+            y = (x + c / x) / 2;
+        }
+        return x;
     }
 
     /**

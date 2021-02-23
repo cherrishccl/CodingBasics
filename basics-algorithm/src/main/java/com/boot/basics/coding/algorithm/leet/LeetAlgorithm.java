@@ -1,9 +1,7 @@
 package com.boot.basics.coding.algorithm.leet;
 
-import com.boot.basics.coding.algorithm.listnode.ListNode;
-
 import java.util.HashMap;
-import java.util.Map;
+
 import java.util.Stack;
 
 /**
@@ -13,6 +11,21 @@ import java.util.Stack;
  * @Description
  */
 public class LeetAlgorithm {
+
+    private static int removeDuplicates(int[] nums) {
+        if(null == nums || nums.length == 0){
+            return 0;
+        }
+        int p = 0, q = 1;
+        while (q < nums.length){
+            if(nums[p] != nums[q]){
+                nums[p+1] = nums[q];
+                p++;
+            }
+            q++;
+        }
+        return p + 1;
+    }
 
     private static boolean validBrackets(String src){
         HashMap<Character, Integer> map = new HashMap<Character, Integer>(){{

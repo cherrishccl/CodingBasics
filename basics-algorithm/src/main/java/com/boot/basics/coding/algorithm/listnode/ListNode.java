@@ -112,6 +112,6 @@ public class ListNode<T> {
         this.val = val;
     }
 
-    T val;
-    ListNode<T> next;
+    public T val;
+    public ListNode<T> next;
 }

@@ -5,6 +5,7 @@ import com.boot.basics.coding.algorithm.listnode.ListNode;
 import java.util.Arrays;
 import java.util.HashMap;
 
+import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -31,6 +32,72 @@ public class LeetAlgorithm {
         int[] arr = new int[]{3, 2, 2, 3};
         removeElement(arr, 3);
         System.out.println(Arrays.toString(arr));
+
+        System.out.println(strStr("aaaabbb", "abc"));
+    }
+
+    public int strStr(String src, String dest, int x) {
+        if (dest == null || dest.length() == 0) {
+            return 0;
+        }
+        if (src == null || src.length() == 0 || dest.length() > src.length()) {
+            return -1;
+        }
+
+        char[] string = src.toCharArray(), pattern = dest.toCharArray();
+        int[] next = new int[pattern.length];
+        next[0] = -1;
+        for (int i = 1, k = -1; i < next.length;) {
+            if (k == -1) {
+                k = next[i] = pattern[0] == pattern[i++] ? 0 : -1;
+            } else {
+                k = pattern[i] == pattern[k + 1] ? next[i++] = k + 1 : next[k];
+            }
+        }
+
+        for (int s = 0, p = 0; s < string.length; s++) {
+            if (pattern[p] != string[s] && p != 0) {
+                p = next[p - 1] + 1;
+                s--;
+            } else if (pattern[p] == string[s]) {
+                if (++p == pattern.length) {
+                    return s - p + 1;
+                }
+            }
+        }
+        return -1;
+    }
+    public static int strStr(String src, String dest){
+
+        if (dest == null || dest.length() == 0) {
+            return 0;
+        }
+        if (src == null || src.length() == 0 || dest.length() > src.length()) {
+            return -1;
+        }
+
+        int first = -1;
+        for(int i = 0; i < src.length(); i++){
+            while (i < src.length() && src.charAt(i) != dest.charAt(0)){
+                i++;
+            }
+            if(i < src.length()){
+                int j = 0;
+                if(src.charAt(i) == dest.charAt(0)){
+                    first = i;
+                }
+                for(; j < dest.length(); j++){
+                    if(src.length() > (first + j) && dest.charAt(j) != src.charAt(first + j)){
+                        first = -1;
+                        break;
+                    }
+                }
+                if(j == dest.length()){
+                    break;
+                }
+            }
+        }
+        return first;
     }
     public static int removeElement(int[] nums, int val) {
         if(null == nums || nums.length == 0){
@@ -209,5 +276,16 @@ public class LeetAlgorithm {
             x /= 10;
         }
         return (int) res == res ? (int) res : 0;
+    }
+
+    private static int[] twoSum(int[] arr, int target){
+        Map<Integer, Integer> map = new HashMap<>(arr.length);
+        for(int i = 0; i < arr.length; i++){
+            if(null != map.get(target - arr[i])){
+                return new int[]{i, map.get(target - arr[i])};
+            }
+            map.put(arr[i], i);
+        }
+        return null;
     }
 }

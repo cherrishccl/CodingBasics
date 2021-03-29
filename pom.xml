@@ -129,6 +129,7 @@
         <module>basics-spring-cloud-stream</module>
         <module>basics-tools</module>
         <module>basics-webflux</module>
+        <module>basic-crawler</module>
     </modules>
 
     <build>

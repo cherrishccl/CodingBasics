@@ -15,7 +15,7 @@ import java.util.Map;
  * @Version 1.0
  * @Description Crawler1
  */
-public class Crawler1 {
+public class CrawlerCq315house {
     public static void main(String[] args) throws IOException {
         String url = "http://www.cq315house.com/WebService/WebFormService.aspx/getParamDatas";
         Map<String, String> param = new HashMap<>(8);

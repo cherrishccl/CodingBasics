@@ -27,6 +27,11 @@ public class JolTest {
         JolTest jolTest = new JolTest();
 
         System.out.println(ClassLayout.parseInstance(jolTest).toPrintable());
+        System.out.println(ClassLayout.parseInstance(EnumTest.N).toPrintable());
     }
 
+
+    public enum EnumTest{
+        Y,N
+    }
 }

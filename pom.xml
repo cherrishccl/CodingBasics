@@ -130,6 +130,7 @@
         <module>basics-tools</module>
         <module>basics-webflux</module>
         <module>basic-crawler</module>
+        <module>basics-mybatis-plus</module>
     </modules>
 
     <build>

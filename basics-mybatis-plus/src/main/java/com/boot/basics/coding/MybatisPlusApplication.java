@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
- * @Author chencl
+ * @Author cherrishccl
  * @Date 2021/7/6 11:29
  * @Version 1.0
  * @Description MybatisPlusApplication

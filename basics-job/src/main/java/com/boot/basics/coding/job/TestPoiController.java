@@ -31,7 +31,7 @@ import java.util.*;
 public class TestPoiController {
     @RequestMapping("/import")
     public Map<String,Object> uploadExcel(@RequestParam("file") MultipartFile file) throws IOException {
-        List<OrderData> list = EasyPoiUtils.importExcel(file, 1, 1, OrderData.class);
+        List<OrderData> list = EasyPoiUtils.importExcel(file, 1, 2, OrderData.class);
         log.info("{}", list);
         return null;
     }

@@ -2,6 +2,7 @@ package com.boot.basics.coding.job;
 
 import cn.afterturn.easypoi.excel.annotation.Excel;
 import cn.afterturn.easypoi.excel.annotation.ExcelCollection;
+import cn.afterturn.easypoi.excel.annotation.ExcelTarget;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
  * @Version 1.0
  * @Description OrderData
  */
+@ExcelTarget("order")
 @lombok.Data
 public class OrderData {
     @Excel(name = "业务编号", needMerge = true)
@@ -20,11 +22,12 @@ public class OrderData {
     private String bizName;
     @Excel(name = "金额", needMerge = true)
     private BigDecimal amount;
-    @ExcelCollection(name = "")
+    @ExcelCollection(name = "明细数据")
     List<OrderDetail> details;
     @Excel(name = "备注", needMerge = true)
     private String remark;
 
+    @ExcelTarget("order")
     @lombok.Data
     public static class OrderDetail{
         @Excel(name = "明细编号")

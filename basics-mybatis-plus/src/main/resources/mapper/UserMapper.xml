@@ -7,4 +7,7 @@
     <select id="selectUser" resultType="com.boot.basics.coding.dao.User">
        select * from t_user where id = #{id}
   </select>
+    <select id="selectUserByName" resultType="com.boot.basics.coding.dao.User">
+       select * from t_user where user_name = #{userName, jdbcType=VARCHAR}
+  </select>
 </mapper>

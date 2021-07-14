@@ -24,7 +24,9 @@ public class UserService {
     private AsyncUserService asyncUserService;
 
     public List<User> list(){
-        return userMapper.selectList(null);
+        User user = new User();
+        user.setUserName("22222");
+        return userMapper.selectUserByName(user);
     }
 
     @Transactional(rollbackFor = Exception.class)
